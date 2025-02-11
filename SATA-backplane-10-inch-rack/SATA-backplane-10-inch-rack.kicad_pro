@@ -51,7 +51,13 @@
           "min_clearance": 0.5
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -171,7 +177,10 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
+      "track_widths": [
+        0.0,
+        0.4
+      ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -198,7 +207,12 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -632,6 +646,54 @@
     [
       "c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c",
       "Root"
+    ],
+    [
+      "684fe6ba-754e-4039-84a8-e792eed0e5a7",
+      "Port_1"
+    ],
+    [
+      "1e8bf777-35ac-4596-8fa9-fda35a6eef76",
+      "Port_2"
+    ],
+    [
+      "bf8cf981-4c40-463b-9b23-920207534293",
+      "Port_3"
+    ],
+    [
+      "c26cad12-c85c-41ac-800e-89a2c40dd921",
+      "Port_4"
+    ],
+    [
+      "fd76af70-e7bd-49a2-8758-b188ec033d96",
+      "Port_5"
+    ],
+    [
+      "b9b99c72-a1e2-458f-82e8-e2b35e05353a",
+      "Port_6"
+    ],
+    [
+      "1a810cb6-0a91-4a1e-a2e1-2838066b525b",
+      "Port_7"
+    ],
+    [
+      "3d930e7c-5fd2-465a-9028-0ad07809c499",
+      "Port_8"
+    ],
+    [
+      "1265ded9-cad2-4384-a743-e0ed70cbb151",
+      "Port_9"
+    ],
+    [
+      "426f6b8d-a849-4be1-8a32-2037e1dfa246",
+      "Port_10"
+    ],
+    [
+      "2c7ce282-a02f-447c-8fbb-b9a36d0933e6",
+      "Port_11"
+    ],
+    [
+      "f0fd58eb-affd-43d6-a13f-0a250fd6b275",
+      "Port_12"
     ]
   ],
   "text_variables": {}

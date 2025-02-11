@@ -4,4 +4,5 @@
   (lib (name "1735284-2")(type "KiCad")(uri "${KIPRJMOD}/Libraries/1735284-2.kicad_sym")(options "")(descr ""))
   (lib (name "HW-613")(type "KiCad")(uri "${KIPRJMOD}/Libraries/HW-613.kicad_sym")(options "")(descr ""))
   (lib (name "87713-1005")(type "KiCad")(uri "${KIPRJMOD}/Libraries/87713-1005.kicad_sym")(options "")(descr ""))
+  (lib (name "PJ-036AH-SMT-TR")(type "KiCad")(uri "${KIPRJMOD}/Libraries/PJ-036AH-SMT-TR.kicad_sym")(options "")(descr ""))
 )
