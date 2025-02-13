@@ -1324,6 +1324,16 @@
 			)
 		)
 	)
+	(text "test"
+		(exclude_from_sim no)
+		(at 101.5762 171.3654 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0c6fa4a2-9407-456a-8e97-119416672919")
+	)
 	(label "GND"
 		(at 119.38 86.36 180)
 		(fields_autoplaced yes)
@@ -1379,17 +1389,6 @@
 		)
 		(uuid "25fa1d28-090c-4747-a50b-c624b1d43364")
 	)
-	(label "5V0_P"
-		(at 119.38 119.38 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "2e27c386-d251-4eba-9084-0e2269c3495b")
-	)
 	(label "A+"
 		(at 119.38 88.9 180)
 		(fields_autoplaced yes)
@@ -1411,17 +1410,6 @@
 			(justify right bottom)
 		)
 		(uuid "31fe4658-fa21-471e-a446-f9d341c4bd3f")
-	)
-	(label "3V3_PWDIS"
-		(at 119.38 109.22 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "325e9b98-f5c9-41ce-b249-2793cb279349")
 	)
 	(label "GND"
 		(at 95.25 99.06 270)
@@ -1467,17 +1455,6 @@
 		)
 		(uuid "3df70613-3a90-440b-b6f9-3e29e47485d0")
 	)
-	(label "12V0_P"
-		(at 119.38 134.62 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "3e77c635-76fb-42f4-9e58-b8c0da512ce7")
-	)
 	(label "5V0"
 		(at 119.38 121.92 180)
 		(fields_autoplaced yes)
@@ -1510,6 +1487,17 @@
 			(justify right bottom)
 		)
 		(uuid "5f9df792-cbe6-48b8-96b3-b830d80646e9")
+	)
+	(label "3V3"
+		(at 119.38 109.22 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5fe6ae95-a50e-4033-92a8-8f36752f34f2")
 	)
 	(label "12V0"
 		(at 106.68 46.99 270)
@@ -1566,6 +1554,17 @@
 		)
 		(uuid "7d2e30ad-8916-471c-846e-350f48307569")
 	)
+	(label "12V0"
+		(at 119.38 134.62 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "85a3d70f-b6f6-491f-89f5-7432a8a51694")
+	)
 	(label "A-"
 		(at 119.38 91.44 180)
 		(fields_autoplaced yes)
@@ -1587,6 +1586,17 @@
 			(justify right bottom)
 		)
 		(uuid "99b300c0-a98e-4053-850a-09c7243e7df0")
+	)
+	(label "5V0"
+		(at 119.38 119.38 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "99f1a389-bc88-43f6-bff5-5c2bbd3e3b08")
 	)
 	(label "GND"
 		(at 92.71 99.06 270)
@@ -1610,6 +1620,17 @@
 		)
 		(uuid "a2dbcc8b-ca26-457f-91a8-93646b20db22")
 	)
+	(label "12V0"
+		(at 144.78 88.9 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "afb163ad-690c-4e06-aee9-c37cff003490")
+	)
 	(label "GND"
 		(at 119.38 93.98 180)
 		(fields_autoplaced yes)
@@ -1621,7 +1642,7 @@
 		)
 		(uuid "b979ea5c-22bd-4586-8745-165dda60bbe1")
 	)
-	(label "ACT"
+	(label "ACT{slash}STA"
 		(at 119.38 129.54 180)
 		(fields_autoplaced yes)
 		(effects
@@ -1631,17 +1652,6 @@
 			(justify right bottom)
 		)
 		(uuid "cb874c74-0985-495b-b85e-a4482486ddfe")
-	)
-	(label "GND"
-		(at 144.78 88.9 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "dc61cf82-fa8b-4c83-b955-956c59064f80")
 	)
 	(label "B+"
 		(at 104.14 88.9 0)
@@ -1655,7 +1665,7 @@
 		(uuid "dcf8b26d-e8bb-46fb-a98b-6abe040ab1ab")
 	)
 	(label "5V0"
-		(at 118.11 46.99 270)
+		(at 119.38 46.99 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1677,7 +1687,7 @@
 		(uuid "e13107f3-f9c4-43c8-87b5-29808564b78e")
 	)
 	(label "3V3"
-		(at 118.11 60.96 270)
+		(at 132.08 46.99 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1741,7 +1751,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "43a9b2d5-6d85-4139-bf53-bd2fd7140517")
-		(property "Reference" "J201"
+		(property "Reference" "J1001"
 			(at 93.98 78.74 0)
 			(effects
 				(font
@@ -1786,16 +1796,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" ""
-			(at 100.33 481.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer_Name" "Molex"
 			(at 100.33 581.28 0)
 			(effects
@@ -1818,36 +1818,6 @@
 		)
 		(property "Mouser Part Number" "538-67800-5001"
 			(at 100.33 781.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Molex/67800-5001?qs=g5f4E6w8l8gZOK2cvWxb3Q%3D%3D"
-			(at 100.33 881.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 100.33 981.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 100.33 1081.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1947,7 +1917,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8ca95550-74e5-4c8b-a9fc-7eb515dc9bc1")
-		(property "Reference" "#PWR0201"
+		(property "Reference" "#PWR01001"
 			(at 106.68 50.8 0)
 			(effects
 				(font
@@ -2058,7 +2028,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b27332f0-e7ad-4739-a484-51263578c817")
-		(property "Reference" "J202"
+		(property "Reference" "J1002"
 			(at 132.08 78.74 0)
 			(effects
 				(font
@@ -2103,16 +2073,6 @@
 				(hide yes)
 			)
 		)
-		(property "Height" "9.95"
-			(at 123.19 481.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer_Name" "TE Connectivity"
 			(at 123.19 581.28 0)
 			(effects
@@ -2135,36 +2095,6 @@
 		)
 		(property "Mouser Part Number" "571-1735284-2"
 			(at 123.19 781.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/TE-Connectivity/1735284-2?qs=p6VZ%252BklCkRRAA6jdGSMntw%3D%3D"
-			(at 123.19 881.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" "1735284-2"
-			(at 123.19 981.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/1735284-2/te-connectivity?region=nac"
-			(at 123.19 1081.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2300,7 +2230,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 118.11 60.96 0)
+		(at 132.08 46.99 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2309,8 +2239,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b54530b3-6209-4044-80ed-2a05ca10f1af")
-		(property "Reference" "#PWR0204"
-			(at 118.11 64.77 0)
+		(property "Reference" "#PWR01004"
+			(at 132.08 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2319,7 +2249,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 118.11 55.88 0)
+			(at 132.08 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2327,7 +2257,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 118.11 60.96 0)
+			(at 132.08 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2336,7 +2266,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 118.11 60.96 0)
+			(at 132.08 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2345,7 +2275,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 118.11 60.96 0)
+			(at 132.08 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2419,7 +2349,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c33beb08-a839-4113-adb6-6483f2e576a9")
-		(property "Reference" "#PWR0203"
+		(property "Reference" "#PWR01003"
 			(at 106.68 66.04 0)
 			(effects
 				(font
@@ -2521,7 +2451,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 118.11 46.99 0)
+		(at 119.38 46.99 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2530,8 +2460,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c86ca763-6948-4069-b304-7dbeffa7dbd2")
-		(property "Reference" "#PWR0202"
-			(at 118.11 50.8 0)
+		(property "Reference" "#PWR01002"
+			(at 119.38 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2540,7 +2470,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 118.11 41.91 0)
+			(at 119.38 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2548,7 +2478,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 118.11 46.99 0)
+			(at 119.38 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2557,7 +2487,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 118.11 46.99 0)
+			(at 119.38 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2566,7 +2496,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 118.11 46.99 0)
+			(at 119.38 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
