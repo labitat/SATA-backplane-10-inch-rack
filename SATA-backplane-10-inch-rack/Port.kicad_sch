@@ -573,26 +573,29 @@
 			)
 		)
 		(symbol "67800-5001:67800-5001"
+			(pin_numbers hide)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "J101"
-				(at 10.16 7.62 0)
+			(property "Reference" "J"
+				(at 16.51 7.62 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left top)
 				)
 			)
 			(property "Value" "67800-5001"
-				(at 10.16 5.08 0)
+				(at 16.51 5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left top)
 				)
 			)
-			(property "Footprint" "Libraries:67800-5005_2"
+			(property "Footprint" "67800-5005_2"
 				(at 16.51 -94.92 0)
 				(effects
 					(font
@@ -613,7 +616,7 @@
 				)
 			)
 			(property "Description" "Molex SATA 67800, 1.27mm Pitch, 7 Way, 1 Row, Vertical PCB Header, Surface Mount"
-				(at 0 0 0)
+				(at 0.508 5.334 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -694,7 +697,7 @@
 			(symbol "67800-5001_1_1"
 				(rectangle
 					(start 5.08 2.54)
-					(end 15.24 -10.16)
+					(end 15.24 -17.78)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -704,8 +707,8 @@
 					)
 				)
 				(pin passive line
-					(at 0 0 0)
-					(length 5.08)
+					(at 2.54 0 0)
+					(length 2.54)
 					(name "1"
 						(effects
 							(font
@@ -722,8 +725,8 @@
 					)
 				)
 				(pin passive line
-					(at 0 -2.54 0)
-					(length 5.08)
+					(at 2.54 -2.54 0)
+					(length 2.54)
 					(name "2"
 						(effects
 							(font
@@ -740,8 +743,8 @@
 					)
 				)
 				(pin passive line
-					(at 0 -5.08 0)
-					(length 5.08)
+					(at 2.54 -5.08 0)
+					(length 2.54)
 					(name "3"
 						(effects
 							(font
@@ -758,8 +761,8 @@
 					)
 				)
 				(pin passive line
-					(at 0 -7.62 0)
-					(length 5.08)
+					(at 2.54 -7.62 0)
+					(length 2.54)
 					(name "4"
 						(effects
 							(font
@@ -776,8 +779,8 @@
 					)
 				)
 				(pin passive line
-					(at 20.32 0 180)
-					(length 5.08)
+					(at 2.54 -10.16 0)
+					(length 2.54)
 					(name "5"
 						(effects
 							(font
@@ -794,8 +797,8 @@
 					)
 				)
 				(pin passive line
-					(at 20.32 -2.54 180)
-					(length 5.08)
+					(at 2.54 -12.7 0)
+					(length 2.54)
 					(name "6"
 						(effects
 							(font
@@ -812,8 +815,8 @@
 					)
 				)
 				(pin passive line
-					(at 20.32 -5.08 180)
-					(length 5.08)
+					(at 2.54 -15.24 0)
+					(length 2.54)
 					(name "7"
 						(effects
 							(font
@@ -830,7 +833,7 @@
 					)
 				)
 				(pin power_out line
-					(at 8.89 -12.7 90)
+					(at 17.78 -12.7 180)
 					(length 2.54)
 					(name "MP1"
 						(effects
@@ -848,7 +851,7 @@
 					)
 				)
 				(pin power_out line
-					(at 11.43 -12.7 90)
+					(at 17.78 -15.24 180)
 					(length 2.54)
 					(name "MP2"
 						(effects
@@ -858,6 +861,326 @@
 						)
 					)
 					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Diode:BAT54S"
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 2.54 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "BAT54S"
+				(at -6.35 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+				(at 1.905 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds11005.pdf"
+				(at -3.048 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Vr 30V, If 200mA, Dual schottky barrier diode, in series, SOT-323"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "schottky diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "BAT54S_0_1"
+				(polyline
+					(pts
+						(xy -3.81 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.175 -1.27) (xy -3.175 -1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -1.27) (xy -3.175 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -1.27) (xy -2.54 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 1.27) (xy -1.905 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 0) (xy 1.905 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 1.27) (xy -1.905 1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 3.81 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 -1.27) (xy 3.175 -1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 -1.27) (xy 3.175 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 -1.27) (xy 3.81 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 1.27) (xy 4.445 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 1.27) (xy 4.445 1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -4.445 1.27) (xy -4.445 -1.27) (xy -2.54 0) (xy -4.445 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 1.27) (xy 1.905 -1.27) (xy 3.81 0) (xy 1.905 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "BAT54S_1_1"
+				(pin passive line
+					(at -7.62 0 0)
+					(length 3.81)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 3.81)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 5.08)
+					(name "COM"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1324,18 +1647,128 @@
 			)
 		)
 	)
-	(text "test"
-		(exclude_from_sim no)
-		(at 101.5762 171.3654 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
+	(wire
+		(pts
+			(xy 104.14 78.74) (xy 104.14 82.55)
 		)
-		(uuid "0c6fa4a2-9407-456a-8e97-119416672919")
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05d425d8-4fbb-493a-94f6-f641c5670168")
+	)
+	(wire
+		(pts
+			(xy 106.68 125.73) (xy 119.38 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0cb93ca7-ffb2-4aeb-acc2-496882f9cdab")
+	)
+	(wire
+		(pts
+			(xy 106.68 120.65) (xy 119.38 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d1b3998-ebbe-4c93-a5ab-2014b41c3ed3")
+	)
+	(wire
+		(pts
+			(xy 106.68 128.27) (xy 119.38 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "109e2d74-83bd-4268-94c6-a3108fabc769")
+	)
+	(wire
+		(pts
+			(xy 104.14 101.6) (xy 104.14 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e086e57-3922-4238-a7db-2d064a21471e")
+	)
+	(wire
+		(pts
+			(xy 106.68 130.81) (xy 119.38 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45a3d214-2717-4269-b835-bbdd6bf1bc88")
+	)
+	(wire
+		(pts
+			(xy 96.52 78.74) (xy 104.14 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45ae051e-b8f9-408a-962f-d01767eaec43")
+	)
+	(wire
+		(pts
+			(xy 109.22 90.17) (xy 119.38 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae2dc1a2-5298-47fb-8db0-aefbd0d2de1d")
+	)
+	(wire
+		(pts
+			(xy 106.68 118.11) (xy 119.38 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf3c9ec3-462a-48a4-b370-1e5bb34c9439")
+	)
+	(wire
+		(pts
+			(xy 106.68 133.35) (xy 119.38 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d18854f8-898c-4d82-8e56-3934c7409084")
+	)
+	(wire
+		(pts
+			(xy 96.52 101.6) (xy 104.14 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d431f3ad-232b-49d0-8018-10c18c2451cb")
+	)
+	(wire
+		(pts
+			(xy 106.68 123.19) (xy 119.38 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb770d0a-60aa-4fc8-bf6e-a597d89a731a")
 	)
 	(label "GND"
-		(at 119.38 86.36 180)
+		(at 119.38 133.35 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1346,7 +1779,7 @@
 		(uuid "01fd151a-adc2-4a95-9240-d056622b2e8e")
 	)
 	(label "B-"
-		(at 119.38 96.52 180)
+		(at 119.38 123.19 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1356,8 +1789,8 @@
 		)
 		(uuid "08d89b2e-5083-4418-8f72-7c97dc97f9a7")
 	)
-	(label "A-"
-		(at 83.82 91.44 180)
+	(label "+3.3V"
+		(at 132.08 46.99 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1365,10 +1798,10 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "0b63e3f1-4aa6-46a9-98c5-3abb9377effc")
+		(uuid "0ecb7a29-8939-4541-8224-aac9ff439ddc")
 	)
-	(label "GND"
-		(at 83.82 86.36 180)
+	(label "+12V"
+		(at 106.68 46.99 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1376,21 +1809,10 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "14615bb3-0aec-48eb-b2d4-3dff97940e77")
-	)
-	(label "A+"
-		(at 83.82 88.9 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "25fa1d28-090c-4747-a50b-c624b1d43364")
+		(uuid "294e62d1-d55b-49ae-b613-c04026e38fb4")
 	)
 	(label "A+"
-		(at 119.38 88.9 180)
+		(at 119.38 130.81 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1401,7 +1823,7 @@
 		(uuid "309c7d92-adec-4bff-8301-704fbf23f89d")
 	)
 	(label "GND"
-		(at 119.38 132.08 180)
+		(at 119.38 87.63 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1412,7 +1834,7 @@
 		(uuid "31fe4658-fa21-471e-a446-f9d341c4bd3f")
 	)
 	(label "GND"
-		(at 95.25 99.06 270)
+		(at 91.44 118.11 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1422,8 +1844,19 @@
 		)
 		(uuid "3389cb63-d4e9-4643-81d0-726209117f86")
 	)
-	(label "GND"
-		(at 83.82 93.98 180)
+	(label "+12V"
+		(at 144.78 130.81 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "36713546-22ae-47e5-833b-b798afb66730")
+	)
+	(label "+5V"
+		(at 119.38 46.99 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1431,10 +1864,10 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "395e74b3-6d7e-4b90-b6cf-4d25e28b10d2")
+		(uuid "36987a09-62f1-4e4c-8d22-c2a56cc73b02")
 	)
 	(label "GND"
-		(at 119.38 101.6 180)
+		(at 119.38 118.11 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1444,8 +1877,8 @@
 		)
 		(uuid "39d5e15c-2eea-431b-b472-4bdfeaa25a72")
 	)
-	(label "12V0"
-		(at 119.38 137.16 180)
+	(label "+12V"
+		(at 119.38 85.09 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1453,10 +1886,10 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "3df70613-3a90-440b-b6f9-3e29e47485d0")
+		(uuid "3ae75cc1-bd7a-4996-8675-31671bfd4c8a")
 	)
-	(label "5V0"
-		(at 119.38 121.92 180)
+	(label "+3.3V"
+		(at 119.38 115.57 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1464,21 +1897,10 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "4729fc3e-b9f3-4660-aaf6-a53f56ccded7")
+		(uuid "49fa60b4-36c4-48a5-9ed8-f7966764cc9c")
 	)
 	(label "GND"
-		(at 104.14 91.44 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "479a6869-225e-40c9-ab0d-dc5eb4e7a0ca")
-	)
-	(label "GND"
-		(at 119.38 127 180)
+		(at 119.38 92.71 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1488,8 +1910,8 @@
 		)
 		(uuid "5f9df792-cbe6-48b8-96b3-b830d80646e9")
 	)
-	(label "3V3"
-		(at 119.38 109.22 180)
+	(label "+3.3V"
+		(at 119.38 110.49 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1499,8 +1921,8 @@
 		)
 		(uuid "5fe6ae95-a50e-4033-92a8-8f36752f34f2")
 	)
-	(label "12V0"
-		(at 106.68 46.99 270)
+	(label "+5V"
+		(at 119.38 97.79 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1508,10 +1930,10 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "63560cbe-d553-41ce-b2a6-972a84ce0427")
+		(uuid "6030e3c9-bd53-4fb2-be33-4c62814e7435")
 	)
 	(label "GND"
-		(at 144.78 86.36 0)
+		(at 144.78 133.35 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1533,7 +1955,7 @@
 		(uuid "6cc06e44-16ee-44ab-8064-d86dba8c1421")
 	)
 	(label "GND"
-		(at 119.38 114.3 180)
+		(at 119.38 105.41 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1544,7 +1966,7 @@
 		(uuid "785d080b-528d-4cb9-ad33-b489b5ee85ad")
 	)
 	(label "B+"
-		(at 119.38 99.06 180)
+		(at 119.38 120.65 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1554,8 +1976,8 @@
 		)
 		(uuid "7d2e30ad-8916-471c-846e-350f48307569")
 	)
-	(label "12V0"
-		(at 119.38 134.62 180)
+	(label "+5V"
+		(at 119.38 100.33 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1563,10 +1985,21 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "85a3d70f-b6f6-491f-89f5-7432a8a51694")
+		(uuid "7f7cdc99-a42a-451b-aae4-6f857fcaa9f0")
+	)
+	(label "+3.3V"
+		(at 119.38 113.03 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "849f905e-8fcb-4767-9337-09ff87f36ab2")
 	)
 	(label "A-"
-		(at 119.38 91.44 180)
+		(at 119.38 128.27 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1576,8 +2009,8 @@
 		)
 		(uuid "8a54245e-5ebb-43b3-b546-0e9a510bb273")
 	)
-	(label "3V3"
-		(at 119.38 104.14 180)
+	(label "+12V"
+		(at 119.38 82.55 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1585,21 +2018,10 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "99b300c0-a98e-4053-850a-09c7243e7df0")
-	)
-	(label "5V0"
-		(at 119.38 119.38 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "99f1a389-bc88-43f6-bff5-5c2bbd3e3b08")
+		(uuid "971a3f8a-25ff-40be-82e9-a201a28b629a")
 	)
 	(label "GND"
-		(at 92.71 99.06 270)
+		(at 91.44 120.65 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1609,8 +2031,8 @@
 		)
 		(uuid "9ea78beb-fbe9-448f-9c5c-f386224936a5")
 	)
-	(label "12V0"
-		(at 119.38 139.7 180)
+	(label "+12V"
+		(at 119.38 80.01 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1620,19 +2042,8 @@
 		)
 		(uuid "a2dbcc8b-ca26-457f-91a8-93646b20db22")
 	)
-	(label "12V0"
-		(at 144.78 88.9 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "afb163ad-690c-4e06-aee9-c37cff003490")
-	)
 	(label "GND"
-		(at 119.38 93.98 180)
+		(at 119.38 125.73 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1642,41 +2053,8 @@
 		)
 		(uuid "b979ea5c-22bd-4586-8745-165dda60bbe1")
 	)
-	(label "ACT{slash}STA"
-		(at 119.38 129.54 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "cb874c74-0985-495b-b85e-a4482486ddfe")
-	)
-	(label "B+"
-		(at 104.14 88.9 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "dcf8b26d-e8bb-46fb-a98b-6abe040ab1ab")
-	)
-	(label "5V0"
-		(at 119.38 46.99 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "dec7426d-c97e-4175-8f8f-24fa11606f8c")
-	)
-	(label "5V0"
-		(at 119.38 124.46 180)
+	(label "+5V"
+		(at 119.38 95.25 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1686,30 +2064,8 @@
 		)
 		(uuid "e13107f3-f9c4-43c8-87b5-29808564b78e")
 	)
-	(label "3V3"
-		(at 132.08 46.99 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "e4137e82-0825-40ac-9f4d-e6ca6d8d26fa")
-	)
-	(label "B-"
-		(at 104.14 86.36 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "f4c6c9b9-2ecd-4a8d-94cb-254b0856c92d")
-	)
 	(label "GND"
-		(at 119.38 116.84 180)
+		(at 119.38 102.87 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1719,8 +2075,8 @@
 		)
 		(uuid "f7cbf635-05e3-4f73-b907-5a75524b30e0")
 	)
-	(label "3V3"
-		(at 119.38 106.68 180)
+	(label "STA{slash}ACT"
+		(at 119.38 90.17 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1728,10 +2084,10 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "fc9985fd-35e4-405a-9fd6-bbe35ba0d9a9")
+		(uuid "fc6013f2-7042-482d-bca3-2e6def63e217")
 	)
 	(label "GND"
-		(at 119.38 111.76 180)
+		(at 119.38 107.95 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1741,18 +2097,61 @@
 		)
 		(uuid "ff57fd1f-4df3-4d2f-be43-38a7c0eb9620")
 	)
+	(global_label "STA_N"
+		(shape input)
+		(at 96.52 101.6 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "76de9cca-ed63-4c65-bf04-21cae4483132")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 87.971 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ACT"
+		(shape output)
+		(at 96.52 78.74 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "81ff44d9-198e-46a7-a9e9-a94fc1b43667")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 90.2086 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(symbol
 		(lib_id "67800-5001:67800-5001")
-		(at 83.82 86.36 0)
+		(at 109.22 133.35 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "43a9b2d5-6d85-4139-bf53-bd2fd7140517")
 		(property "Reference" "J1001"
-			(at 93.98 78.74 0)
+			(at 99.06 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1760,7 +2159,7 @@
 			)
 		)
 		(property "Value" "67800-5001"
-			(at 93.98 81.28 0)
+			(at 99.06 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1768,7 +2167,7 @@
 			)
 		)
 		(property "Footprint" "Libraries:67800-5005_2"
-			(at 100.33 181.28 0)
+			(at 92.71 38.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1778,7 +2177,7 @@
 			)
 		)
 		(property "Datasheet" "https://datasheet.datasheetarchive.com/originals/distributors/Datasheets_SAMA/0faa6e41b2707203d8a1a7c607a5a567.pdf"
-			(at 100.33 281.28 0)
+			(at 92.71 -61.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1788,7 +2187,7 @@
 			)
 		)
 		(property "Description" "Molex SATA 67800, 1.27mm Pitch, 7 Way, 1 Row, Vertical PCB Header, Surface Mount"
-			(at 83.82 86.36 0)
+			(at 109.22 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1797,7 +2196,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Molex"
-			(at 100.33 581.28 0)
+			(at 92.71 -361.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1807,7 +2206,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "67800-5001"
-			(at 100.33 681.28 0)
+			(at 92.71 -461.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1817,7 +2216,7 @@
 			)
 		)
 		(property "Mouser Part Number" "538-67800-5001"
-			(at 100.33 781.28 0)
+			(at 92.71 -561.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2019,8 +2418,7 @@
 	)
 	(symbol
 		(lib_id "1735284-2:1735284-2")
-		(at 144.78 86.36 0)
-		(mirror y)
+		(at 144.78 133.35 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2029,7 +2427,7 @@
 		(fields_autoplaced yes)
 		(uuid "b27332f0-e7ad-4739-a484-51263578c817")
 		(property "Reference" "J1002"
-			(at 132.08 78.74 0)
+			(at 132.08 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2037,7 +2435,7 @@
 			)
 		)
 		(property "Value" "1735284-2"
-			(at 132.08 81.28 0)
+			(at 132.08 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2045,7 +2443,7 @@
 			)
 		)
 		(property "Footprint" "Libraries:17352842"
-			(at 123.19 181.28 0)
+			(at 123.19 38.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2055,7 +2453,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.arrow.com/en/products/1735284-2/te-connectivity"
-			(at 123.19 281.28 0)
+			(at 123.19 -61.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2065,7 +2463,7 @@
 			)
 		)
 		(property "Description" "Body Features: Connector Profile Standard | Configuration Features: Number of Positions 22 | Number of Ports 2 | PCB Mount Orientation Vertical | Number of Rows 1 | Contact Features: PCB Contact Termination Area Plating Material Tin | Contact Configuration 7P + 15P | Contact Base Material Copper Alloy | Contact Mating Area Plating Material Gold | Contact Current Rating (Max) 1.5 AMP | Contact Mating Area Plating Material Thickness 30 MICIN | Contact Mating Area Plating Material Thickness .76 MICM | Dimensio"
-			(at 144.78 86.36 0)
+			(at 144.78 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2074,7 +2472,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "TE Connectivity"
-			(at 123.19 581.28 0)
+			(at 123.19 -361.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2084,7 +2482,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "1735284-2"
-			(at 123.19 681.28 0)
+			(at 123.19 -461.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2094,7 +2492,7 @@
 			)
 		)
 		(property "Mouser Part Number" "571-1735284-2"
-			(at 123.19 781.28 0)
+			(at 123.19 -561.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2555,6 +2953,125 @@
 				)
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c/fd76af70-e7bd-49a2-8758-b188ec033d96"
 					(reference "#PWR0602")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:BAT54S")
+		(at 104.14 90.17 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f490ec7e-2f65-44fd-8c20-4b0482c112b4")
+		(property "Reference" "D1001"
+			(at 101.6 88.8999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BAT54S"
+			(at 101.6 91.4399 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 100.965 92.075 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/ds11005.pdf"
+			(at 104.14 87.122 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Vr 30V, If 200mA, Dual schottky barrier diode, in series, SOT-323"
+			(at 104.14 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8caf0eaa-76f0-417c-ab0a-a4a76e40b05a")
+		)
+		(pin "3"
+			(uuid "82f90c71-1d33-4840-8f33-d167a22f89f3")
+		)
+		(pin "2"
+			(uuid "3406e09f-e806-4867-9326-ac7c569395fb")
+		)
+		(instances
+			(project ""
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c/1265ded9-cad2-4384-a743-e0ed70cbb151"
+					(reference "D1001")
+					(unit 1)
+				)
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c/1a810cb6-0a91-4a1e-a2e1-2838066b525b"
+					(reference "D801")
+					(unit 1)
+				)
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c/1e8bf777-35ac-4596-8fa9-fda35a6eef76"
+					(reference "D301")
+					(unit 1)
+				)
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c/2c7ce282-a02f-447c-8fbb-b9a36d0933e6"
+					(reference "D1201")
+					(unit 1)
+				)
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c/3d930e7c-5fd2-465a-9028-0ad07809c499"
+					(reference "D901")
+					(unit 1)
+				)
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c/426f6b8d-a849-4be1-8a32-2037e1dfa246"
+					(reference "D1101")
+					(unit 1)
+				)
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c/684fe6ba-754e-4039-84a8-e792eed0e5a7"
+					(reference "D201")
+					(unit 1)
+				)
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c/b9b99c72-a1e2-458f-82e8-e2b35e05353a"
+					(reference "D701")
+					(unit 1)
+				)
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c/bf8cf981-4c40-463b-9b23-920207534293"
+					(reference "D401")
+					(unit 1)
+				)
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c/c26cad12-c85c-41ac-800e-89a2c40dd921"
+					(reference "D501")
+					(unit 1)
+				)
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c/f0fd58eb-affd-43d6-a13f-0a250fd6b275"
+					(reference "D1301")
+					(unit 1)
+				)
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c/fd76af70-e7bd-49a2-8758-b188ec033d96"
+					(reference "D601")
 					(unit 1)
 				)
 			)

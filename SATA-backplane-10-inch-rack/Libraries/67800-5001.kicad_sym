@@ -3,6 +3,7 @@
 	(generator "kicad_symbol_editor")
 	(generator_version "8.0")
 	(symbol "67800-5001"
+		(pin_numbers hide)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -45,7 +46,7 @@
 			)
 		)
 		(property "Description" "Molex SATA 67800, 1.27mm Pitch, 7 Way, 1 Row, Vertical PCB Header, Surface Mount"
-			(at 0 0 0)
+			(at 0.508 5.334 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -126,7 +127,7 @@
 		(symbol "67800-5001_1_1"
 			(rectangle
 				(start 5.08 2.54)
-				(end 15.24 -10.16)
+				(end 15.24 -17.78)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -136,8 +137,8 @@
 				)
 			)
 			(pin passive line
-				(at 0 0 0)
-				(length 5.08)
+				(at 2.54 0 0)
+				(length 2.54)
 				(name "1"
 					(effects
 						(font
@@ -154,8 +155,8 @@
 				)
 			)
 			(pin passive line
-				(at 0 -2.54 0)
-				(length 5.08)
+				(at 2.54 -2.54 0)
+				(length 2.54)
 				(name "2"
 					(effects
 						(font
@@ -172,8 +173,8 @@
 				)
 			)
 			(pin passive line
-				(at 0 -5.08 0)
-				(length 5.08)
+				(at 2.54 -5.08 0)
+				(length 2.54)
 				(name "3"
 					(effects
 						(font
@@ -190,8 +191,8 @@
 				)
 			)
 			(pin passive line
-				(at 0 -7.62 0)
-				(length 5.08)
+				(at 2.54 -7.62 0)
+				(length 2.54)
 				(name "4"
 					(effects
 						(font
@@ -208,8 +209,8 @@
 				)
 			)
 			(pin passive line
-				(at 20.32 0 180)
-				(length 5.08)
+				(at 2.54 -10.16 0)
+				(length 2.54)
 				(name "5"
 					(effects
 						(font
@@ -226,8 +227,8 @@
 				)
 			)
 			(pin passive line
-				(at 20.32 -2.54 180)
-				(length 5.08)
+				(at 2.54 -12.7 0)
+				(length 2.54)
 				(name "6"
 					(effects
 						(font
@@ -244,8 +245,8 @@
 				)
 			)
 			(pin passive line
-				(at 20.32 -5.08 180)
-				(length 5.08)
+				(at 2.54 -15.24 0)
+				(length 2.54)
 				(name "7"
 					(effects
 						(font
@@ -262,7 +263,7 @@
 				)
 			)
 			(pin power_out line
-				(at 8.89 -12.7 90)
+				(at 17.78 -12.7 180)
 				(length 2.54)
 				(name "MP1"
 					(effects
@@ -280,7 +281,7 @@
 				)
 			)
 			(pin power_out line
-				(at 11.43 -12.7 90)
+				(at 17.78 -15.24 180)
 				(length 2.54)
 				(name "MP2"
 					(effects
