@@ -2179,17 +2179,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "SPNIUP     JUMPER\nStaggered   Open\nForced      Closed"
-		(exclude_from_sim no)
-		(at 151.892 98.044 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "0b1e4150-c1d4-4c4f-adc4-0e9186c37ab3")
-	)
 	(junction
 		(at 140.97 90.17)
 		(diameter 0)
@@ -2663,6 +2652,133 @@
 			(type default)
 		)
 		(uuid "f81dd0ee-953c-405c-961e-8796ea2cba53")
+	)
+	(table
+		(column_count 2)
+		(border
+			(external yes)
+			(header yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(separators
+			(rows no)
+			(cols no)
+		)
+		(column_widths 15.24 10.16)
+		(row_heights 3.81 2.54 3.81)
+		(cells
+			(table_cell "SPINUP mode"
+				(exclude_from_sim no)
+				(at 151.13 93.98 0)
+				(size 15.24 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 218 239 255 1)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.254)
+						(bold yes)
+					)
+					(justify left top)
+				)
+				(uuid "2d14bca7-73b4-4bc9-9cd7-2bcce7e80bb1")
+			)
+			(table_cell "JP101"
+				(exclude_from_sim no)
+				(at 166.37 93.98 0)
+				(size 10.16 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 218 239 255 1)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.254)
+						(bold yes)
+					)
+					(justify left top)
+				)
+				(uuid "87c7580d-ccd8-4ff9-a82c-82407986e66d")
+			)
+			(table_cell "Staggered"
+				(exclude_from_sim no)
+				(at 151.13 97.79 0)
+				(size 15.24 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "4e81179f-2651-4456-8b6a-cc2380c47d5c")
+			)
+			(table_cell "OPEN"
+				(exclude_from_sim no)
+				(at 166.37 97.79 0)
+				(size 10.16 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "000f18de-f8f8-476a-ba04-bc7a660e00b0")
+			)
+			(table_cell "Forced"
+				(exclude_from_sim no)
+				(at 151.13 100.33 0)
+				(size 15.24 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "77fc70fd-ecaa-4000-acc6-9e6822344514")
+			)
+			(table_cell "CLOSED"
+				(exclude_from_sim no)
+				(at 166.37 100.33 0)
+				(size 10.16 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "6f576ced-e22b-4f84-9be0-07aa64a4388a")
+			)
+		)
 	)
 	(label "+5V"
 		(at 170.18 38.1 0)
