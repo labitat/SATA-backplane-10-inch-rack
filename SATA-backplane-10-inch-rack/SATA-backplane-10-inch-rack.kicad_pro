@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.67
+          "min_clearance": 0.0
         }
       },
       "diff_pair_dimensions": [
@@ -108,6 +108,7 @@
         "solder_mask_bridge": "error",
         "starved_thermal": "error",
         "text_height": "warning",
+        "text_on_edge_cuts": "error",
         "text_thickness": "warning",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
@@ -680,30 +681,6 @@
     [
       "b9b99c72-a1e2-458f-82e8-e2b35e05353a",
       "Port_6"
-    ],
-    [
-      "1a810cb6-0a91-4a1e-a2e1-2838066b525b",
-      "Port_7"
-    ],
-    [
-      "3d930e7c-5fd2-465a-9028-0ad07809c499",
-      "Port_8"
-    ],
-    [
-      "1265ded9-cad2-4384-a743-e0ed70cbb151",
-      "Port_9"
-    ],
-    [
-      "426f6b8d-a849-4be1-8a32-2037e1dfa246",
-      "Port_10"
-    ],
-    [
-      "2c7ce282-a02f-447c-8fbb-b9a36d0933e6",
-      "Port_11"
-    ],
-    [
-      "f0fd58eb-affd-43d6-a13f-0a250fd6b275",
-      "Port_12"
     ]
   ],
   "text_variables": {}

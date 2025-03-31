@@ -2186,6 +2186,12 @@
 		(uuid "2e12450d-4fa0-4c58-9032-7d8be3e9e85d")
 	)
 	(junction
+		(at 153.67 77.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "38580efa-41f6-4874-a131-84e3f20b22c5")
+	)
+	(junction
 		(at 68.58 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2196,12 +2202,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "42c79626-2341-43f9-ba9f-4a8cad0124df")
-	)
-	(junction
-		(at 153.67 90.17)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "48dba25c-a247-4f55-9c28-b2f13cec1202")
 	)
 	(junction
 		(at 182.88 38.1)
@@ -2365,7 +2365,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 90.17) (xy 165.1 90.17)
+			(xy 167.64 77.47) (xy 165.1 77.47)
 		)
 		(stroke
 			(width 0)
@@ -2375,7 +2375,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 90.17) (xy 157.48 90.17)
+			(xy 153.67 77.47) (xy 157.48 77.47)
 		)
 		(stroke
 			(width 0)
@@ -2672,7 +2672,7 @@
 		(cells
 			(table_cell "SPINUP mode"
 				(exclude_from_sim no)
-				(at 151.13 93.98 0)
+				(at 157.48 82.55 0)
 				(size 15.24 3.81)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -2692,7 +2692,7 @@
 			)
 			(table_cell "JP101"
 				(exclude_from_sim no)
-				(at 166.37 93.98 0)
+				(at 172.72 82.55 0)
 				(size 10.16 3.81)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -2712,7 +2712,7 @@
 			)
 			(table_cell "Staggered"
 				(exclude_from_sim no)
-				(at 151.13 97.79 0)
+				(at 157.48 86.36 0)
 				(size 15.24 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -2729,7 +2729,7 @@
 			)
 			(table_cell "OPEN"
 				(exclude_from_sim no)
-				(at 166.37 97.79 0)
+				(at 172.72 86.36 0)
 				(size 10.16 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -2746,7 +2746,7 @@
 			)
 			(table_cell "Forced"
 				(exclude_from_sim no)
-				(at 151.13 100.33 0)
+				(at 157.48 88.9 0)
 				(size 15.24 3.81)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -2763,7 +2763,7 @@
 			)
 			(table_cell "CLOSED"
 				(exclude_from_sim no)
-				(at 166.37 100.33 0)
+				(at 172.72 88.9 0)
 				(size 10.16 3.81)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -2872,7 +2872,7 @@
 	)
 	(global_label "STA_N"
 		(shape output)
-		(at 167.64 90.17 0)
+		(at 167.64 77.47 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2882,7 +2882,7 @@
 		)
 		(uuid "5d7cda78-f9f5-49cf-970c-562ccddfaaa5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 176.189 90.17 0)
+			(at 176.189 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2924,7 +2924,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1b80f9dc-93ed-4245-b589-2f4fa7c1e42c")
-		(property "Reference" "R101"
+		(property "Reference" "R102"
 			(at 93.98 77.4699 0)
 			(effects
 				(font
@@ -2978,7 +2978,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "R101")
+					(reference "R102")
 					(unit 1)
 				)
 			)
@@ -3194,7 +3194,7 @@
 	)
 	(symbol
 		(lib_id "Jumper:SolderJumper_2_Open")
-		(at 161.29 90.17 0)
+		(at 161.29 77.47 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3203,7 +3203,7 @@
 		(fields_autoplaced yes)
 		(uuid "1f97e7ab-30ff-4ec6-b2db-8e966d7abdf3")
 		(property "Reference" "JP101"
-			(at 161.29 83.82 0)
+			(at 161.29 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3211,7 +3211,7 @@
 			)
 		)
 		(property "Value" "SolderJumper"
-			(at 161.29 86.36 0)
+			(at 161.29 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3219,7 +3219,7 @@
 			)
 		)
 		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 161.29 90.17 0)
+			(at 161.29 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3228,7 +3228,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 161.29 90.17 0)
+			(at 161.29 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3237,7 +3237,7 @@
 			)
 		)
 		(property "Description" "Solder Jumper, 2-pole, open"
-			(at 161.29 90.17 0)
+			(at 161.29 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3336,7 +3336,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3d7353d3-4c3f-4b97-9b86-47116b61efc0")
-		(property "Reference" "#PWR0110"
+		(property "Reference" "#PWR0111"
 			(at 91.44 118.11 0)
 			(effects
 				(font
@@ -3386,7 +3386,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0110")
+					(reference "#PWR0111")
 					(unit 1)
 				)
 			)
@@ -3402,7 +3402,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "459117f2-676c-4c18-81e9-b9119535d3ee")
-		(property "Reference" "#PWR0111"
+		(property "Reference" "#PWR0109"
 			(at 140.97 97.79 0)
 			(effects
 				(font
@@ -3452,7 +3452,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0111")
+					(reference "#PWR0109")
 					(unit 1)
 				)
 			)
@@ -3468,7 +3468,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4e0647ef-b012-4faf-91a3-785d60e6128c")
-		(property "Reference" "#PWR0104"
+		(property "Reference" "#PWR0106"
 			(at 233.68 57.15 0)
 			(effects
 				(font
@@ -3518,7 +3518,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0104")
+					(reference "#PWR0106")
 					(unit 1)
 				)
 			)
@@ -3845,7 +3845,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5cfe4b7c-59e5-48f8-9ff6-8f85ab96ff6e")
-		(property "Reference" "R104"
+		(property "Reference" "R101"
 			(at 147.32 71.12 90)
 			(effects
 				(font
@@ -3897,7 +3897,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "R104")
+					(reference "R101")
 					(unit 1)
 				)
 			)
@@ -3913,7 +3913,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6098626a-4f6d-4dbf-a1a9-92135d87dd79")
-		(property "Reference" "#PWR0103"
+		(property "Reference" "#PWR0104"
 			(at 132.08 57.15 0)
 			(effects
 				(font
@@ -3963,7 +3963,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0103")
+					(reference "#PWR0104")
 					(unit 1)
 				)
 			)
@@ -4077,7 +4077,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "68d57c8e-8624-4035-a403-300d2707c96e")
-		(property "Reference" "#PWR0105"
+		(property "Reference" "#PWR0107"
 			(at 91.44 77.47 0)
 			(effects
 				(font
@@ -4127,7 +4127,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0105")
+					(reference "#PWR0107")
 					(unit 1)
 				)
 			)
@@ -4358,7 +4358,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7833138c-8732-4fdf-bea4-5ab1fe6c6d41")
-		(property "Reference" "#PWR0109"
+		(property "Reference" "#PWR0103"
 			(at 233.68 41.91 0)
 			(effects
 				(font
@@ -4408,7 +4408,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0109")
+					(reference "#PWR0103")
 					(unit 1)
 				)
 			)
@@ -4424,7 +4424,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7ecc5e81-58c2-455d-ba60-5476fe6e67d4")
-		(property "Reference" "#PWR0102"
+		(property "Reference" "#PWR0105"
 			(at 182.88 57.15 0)
 			(effects
 				(font
@@ -4474,7 +4474,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0102")
+					(reference "#PWR0105")
 					(unit 1)
 				)
 			)
@@ -4587,7 +4587,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9828fbc0-2f53-429a-a30b-029965f14af9")
-		(property "Reference" "#PWR0108"
+		(property "Reference" "#PWR0110"
 			(at 68.58 118.11 0)
 			(effects
 				(font
@@ -4637,7 +4637,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0108")
+					(reference "#PWR0110")
 					(unit 1)
 				)
 			)
@@ -4654,7 +4654,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a67058c9-947b-41d8-8569-2e76a94eb5ee")
-		(property "Reference" "#PWR0107"
+		(property "Reference" "#PWR0102"
 			(at 182.88 41.91 0)
 			(effects
 				(font
@@ -4704,7 +4704,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0107")
+					(reference "#PWR0102")
 					(unit 1)
 				)
 			)
@@ -4818,7 +4818,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cfc9f4b0-3bad-40f8-aa06-d0071fb59177")
-		(property "Reference" "#PWR0106"
+		(property "Reference" "#PWR0108"
 			(at 68.58 88.9 0)
 			(effects
 				(font
@@ -4868,7 +4868,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0106")
+					(reference "#PWR0108")
 					(unit 1)
 				)
 			)
@@ -5186,7 +5186,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ebbb3f52-800c-47f4-af10-52895e28250b")
-		(property "Reference" "R102"
+		(property "Reference" "R104"
 			(at 54.61 97.79 90)
 			(effects
 				(font
@@ -5238,94 +5238,8 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "R102")
+					(reference "R104")
 					(unit 1)
-				)
-			)
-		)
-	)
-	(sheet
-		(at 185.42 132.08)
-		(size 8.89 21.59)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "1265ded9-cad2-4384-a743-e0ed70cbb151")
-		(property "Sheetname" "Port_9"
-			(at 185.42 131.3684 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Port.kicad_sch"
-			(at 185.42 154.2546 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "SATA-backplane-10-inch-rack"
-				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(page "10")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 160.02 132.08)
-		(size 8.89 21.59)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "1a810cb6-0a91-4a1e-a2e1-2838066b525b")
-		(property "Sheetname" "Port_7"
-			(at 160.02 131.3684 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Port.kicad_sch"
-			(at 160.02 154.2546 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "SATA-backplane-10-inch-rack"
-				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(page "8")
 				)
 			)
 		)
@@ -5369,135 +5283,6 @@
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
 					(page "3")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 210.82 132.08)
-		(size 8.89 21.59)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "2c7ce282-a02f-447c-8fbb-b9a36d0933e6")
-		(property "Sheetname" "Port_11"
-			(at 210.82 131.3684 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Port.kicad_sch"
-			(at 210.82 154.2546 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "SATA-backplane-10-inch-rack"
-				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(page "12")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 172.72 132.08)
-		(size 8.89 21.59)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "3d930e7c-5fd2-465a-9028-0ad07809c499")
-		(property "Sheetname" "Port_8"
-			(at 172.72 131.3684 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Port.kicad_sch"
-			(at 172.72 154.2546 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "SATA-backplane-10-inch-rack"
-				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(page "9")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 198.12 132.08)
-		(size 8.89 21.59)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "426f6b8d-a849-4be1-8a32-2037e1dfa246")
-		(property "Sheetname" "Port_10"
-			(at 198.12 131.3684 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Port.kicad_sch"
-			(at 198.12 154.2546 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "SATA-backplane-10-inch-rack"
-				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(page "11")
 				)
 			)
 		)
@@ -5670,49 +5455,6 @@
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
 					(page "5")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 223.52 132.08)
-		(size 8.89 21.59)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "f0fd58eb-affd-43d6-a13f-0a250fd6b275")
-		(property "Sheetname" "Port_12"
-			(at 223.52 131.3684 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Port.kicad_sch"
-			(at 223.52 154.2546 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "SATA-backplane-10-inch-rack"
-				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(page "13")
 				)
 			)
 		)
