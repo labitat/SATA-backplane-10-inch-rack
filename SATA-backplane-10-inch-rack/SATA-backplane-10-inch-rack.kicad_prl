@@ -8,7 +8,7 @@
     "high_contrast_mode": 0,
     "net_color_mode": 1,
     "opacity": {
-      "images": 0.33000001311302185,
+      "images": 0.07999999821186066,
       "pads": 0.6600000262260437,
       "shapes": 1.0,
       "tracks": 1.0,
@@ -20,7 +20,7 @@
       "footprints": true,
       "graphics": true,
       "keepouts": true,
-      "lockedItems": true,
+      "lockedItems": false,
       "otherItems": true,
       "pads": true,
       "text": true,
@@ -48,7 +48,7 @@
       "conflict_shadows",
       "shapes"
     ],
-    "visible_layers": "00000000_00000000_0fffff00_fffdffff",
+    "visible_layers": "00000000_00000000_0fffff80_ffffffda",
     "zone_display_mode": 0
   },
   "git": {

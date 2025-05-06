@@ -510,7 +510,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "SATA-backplane-10-inch-rack.step",
       "svg": "",
       "vrml": ""
     },
