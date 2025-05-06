@@ -535,45 +535,45 @@
       "fields_ordered": [
         {
           "group_by": false,
-          "label": "Reference",
-          "name": "Reference",
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
           "show": true
-        },
-        {
-          "group_by": true,
-          "label": "Value",
-          "name": "Value",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Datasheet",
-          "name": "Datasheet",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Footprint",
-          "name": "Footprint",
-          "show": false
         },
         {
           "group_by": false,
           "label": "Qty",
           "name": "${QUANTITY}",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
-          "label": "DNP",
-          "name": "${DNP}",
-          "show": false
+          "label": "Reference",
+          "name": "Reference",
+          "show": true
         },
         {
           "group_by": false,
-          "label": "#",
-          "name": "${ITEM_NUMBER}",
-          "show": false
+          "label": "Value",
+          "name": "Value",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Footprint",
+          "name": "Footprint",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Datasheet",
+          "name": "Datasheet",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": true
         },
         {
           "group_by": false,
@@ -595,14 +595,14 @@
         },
         {
           "group_by": false,
-          "label": "Description",
-          "name": "Description",
-          "show": false
+          "label": "V_{ds}",
+          "name": "V_{ds}",
+          "show": true
         },
         {
           "group_by": false,
-          "label": "Spare#",
-          "name": "Spare#",
+          "label": "DNP",
+          "name": "${DNP}",
           "show": false
         }
       ],
@@ -655,10 +655,6 @@
   },
   "sheets": [
     [
-      "c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c",
-      "Root"
-    ],
-    [
       "684fe6ba-754e-4039-84a8-e792eed0e5a7",
       "Port_1"
     ],
@@ -681,6 +677,10 @@
     [
       "b9b99c72-a1e2-458f-82e8-e2b35e05353a",
       "Port_6"
+    ],
+    [
+      "c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c",
+      "Root"
     ]
   ],
   "text_variables": {}
