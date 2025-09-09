@@ -862,7 +862,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Jumper:SolderJumper_2_Open"
+		(symbol "Jumper:Jumper_2_Small_Open"
 			(pin_numbers
 				(hide yes)
 			)
@@ -870,19 +870,19 @@
 				(offset 0)
 				(hide yes)
 			)
-			(exclude_from_sim yes)
-			(in_bom no)
+			(exclude_from_sim no)
+			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "JP"
-				(at 0 2.032 0)
+				(at 0 2.794 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "SolderJumper_2_Open"
-				(at 0 -2.54 0)
+			(property "Value" "Jumper_2_Small_Open"
+				(at 0 -2.286 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -907,7 +907,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Solder Jumper, 2-pole, open"
+			(property "Description" "Jumper, 2-pole, small symbol, open"
 				(at 0 0 0)
 				(effects
 					(font
@@ -916,7 +916,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "solder jumper SPST"
+			(property "ki_keywords" "Jumper SPST"
 				(at 0 0 0)
 				(effects
 					(font
@@ -925,7 +925,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "SolderJumper*Open*"
+			(property "ki_fp_filters" "Jumper* TestPoint*2Pads* TestPoint*Bridge*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -934,11 +934,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "SolderJumper_2_Open_0_1"
-				(polyline
-					(pts
-						(xy -0.254 1.016) (xy -0.254 -1.016)
-					)
+			(symbol "Jumper_2_Small_Open_0_0"
+				(circle
+					(center -1.016 0)
+					(radius 0.254)
 					(stroke
 						(width 0)
 						(type default)
@@ -947,58 +946,9 @@
 						(type none)
 					)
 				)
-				(arc
-					(start -0.254 -1.016)
-					(mid -1.2656 0)
-					(end -0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -0.254 -1.016)
-					(mid -1.2656 0)
-					(end -0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(arc
-					(start 0.254 1.016)
-					(mid 1.2656 0)
-					(end 0.254 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0.254 1.016)
-					(mid 1.2656 0)
-					(end 0.254 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 1.016) (xy 0.254 -1.016)
-					)
+				(circle
+					(center 1.016 0)
+					(radius 0.254)
 					(stroke
 						(width 0)
 						(type default)
@@ -1008,10 +958,24 @@
 					)
 				)
 			)
-			(symbol "SolderJumper_2_Open_1_1"
+			(symbol "Jumper_2_Small_Open_0_1"
+				(arc
+					(start -0.762 1.0196)
+					(mid 0 1.2729)
+					(end 0.762 1.0196)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Jumper_2_Small_Open_1_1"
 				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
+					(at -2.54 0 0)
+					(length 1.27)
 					(name "A"
 						(effects
 							(font
@@ -1028,8 +992,8 @@
 					)
 				)
 				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
+					(at 2.54 0 180)
+					(length 1.27)
 					(name "B"
 						(effects
 							(font
@@ -1697,6 +1661,105 @@
 								(size 1.27 1.27)
 							)
 						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Mechanical:Heatsink"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "HS"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Heatsink"
+				(at 0 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.3048 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0.3048 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Heatsink"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "thermal heat temperature"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Heatsink_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Heatsink_0_1"
+				(polyline
+					(pts
+						(xy -0.3302 1.27) (xy -0.9652 1.27) (xy -0.9652 3.81) (xy -1.6002 3.81) (xy -1.6002 1.27) (xy -2.2352 1.27)
+						(xy -2.2352 3.81) (xy -2.8702 3.81) (xy -2.8702 0) (xy -0.9652 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3302 1.27) (xy -0.3302 3.81) (xy 0.3048 3.81) (xy 0.3048 1.27) (xy 0.9398 1.27) (xy 0.9398 3.81)
+						(xy 1.5748 3.81) (xy 1.5748 1.27) (xy 2.2098 1.27) (xy 2.2098 3.81) (xy 2.8448 3.81) (xy 2.8448 0)
+						(xy -0.9652 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
 					)
 				)
 			)
@@ -2488,6 +2551,16 @@
 	)
 	(wire
 		(pts
+			(xy 227.33 78.74) (xy 238.76 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "299299c8-cb27-4018-9787-a501b665b25a")
+	)
+	(wire
+		(pts
 			(xy 66.04 99.06) (xy 68.58 99.06)
 		)
 		(stroke
@@ -2538,27 +2611,7 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 99.06) (xy 81.28 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "44c8c162-0071-4f3a-bf71-b25e5a5720c2")
-	)
-	(wire
-		(pts
-			(xy 228.6 78.74) (xy 238.76 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "49f887ab-67a6-4401-aa61-2e8791a8ace9")
-	)
-	(wire
-		(pts
-			(xy 68.58 99.06) (xy 73.66 99.06)
+			(xy 68.58 99.06) (xy 74.93 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2728,7 +2781,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 35.56) (xy 91.44 35.56)
+			(xy 86.36 50.8) (xy 91.44 50.8)
 		)
 		(stroke
 			(width 0)
@@ -2745,6 +2798,16 @@
 			(type default)
 		)
 		(uuid "ad05d3ba-50b4-4a7a-afc5-568306fc635c")
+	)
+	(wire
+		(pts
+			(xy 80.01 99.06) (xy 83.82 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad1dd5c8-e0f5-43fa-b195-d02b472e869c")
 	)
 	(wire
 		(pts
@@ -2838,7 +2901,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 78.74) (xy 220.98 78.74)
+			(xy 209.55 78.74) (xy 222.25 78.74)
 		)
 		(stroke
 			(width 0)
@@ -3171,7 +3234,7 @@
 		(uuid "43dda92a-7e11-48b0-be14-69e08c3d2e8c")
 	)
 	(label "GND"
-		(at 91.44 35.56 180)
+		(at 91.44 50.8 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3563,14 +3626,14 @@
 		)
 	)
 	(symbol
-		(lib_id "Jumper:SolderJumper_2_Open")
+		(lib_id "Jumper:Jumper_2_Small_Open")
 		(at 77.47 99.06 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "1f97e7ab-30ff-4ec6-b2db-8e966d7abdf3")
 		(property "Reference" "JP101"
 			(at 77.47 92.71 0)
@@ -3580,7 +3643,7 @@
 				)
 			)
 		)
-		(property "Value" "SolderJumper"
+		(property "Value" "Jumper"
 			(at 77.47 95.25 0)
 			(effects
 				(font
@@ -3588,7 +3651,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Horizontal"
 			(at 77.47 99.06 0)
 			(effects
 				(font
@@ -3606,7 +3669,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Solder Jumper, 2-pole, open"
+		(property "Description" "Jumper, 2-pole, small symbol, open"
 			(at 77.47 99.06 0)
 			(effects
 				(font
@@ -5017,6 +5080,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:Heatsink")
+		(at 26.67 176.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a0dd340b-d73b-4542-8930-be0a8cf7fc70")
+		(property "Reference" "MECH1"
+			(at 30.48 173.3549 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "3D print"
+			(at 30.48 175.8949 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 26.9748 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 26.9748 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Heatsink"
+			(at 26.67 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project ""
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
+					(reference "MECH1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 182.88 38.1 0)
 		(mirror y)
@@ -5510,7 +5637,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
-		(at 81.28 43.18 180)
+		(at 81.28 45.72 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5518,7 +5645,7 @@
 		(dnp no)
 		(uuid "e9928738-3c60-4044-a74d-f40578f71360")
 		(property "Reference" "J101"
-			(at 78.74 43.1801 0)
+			(at 78.74 45.7201 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5527,7 +5654,7 @@
 			)
 		)
 		(property "Value" "Conn_01x06"
-			(at 78.74 40.6401 0)
+			(at 78.74 43.1801 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5536,7 +5663,7 @@
 			)
 		)
 		(property "Footprint" "TerminalBlock_Phoenix_PT-1,5-6-3.5-H_1x06_P3.50mm_Horizontal"
-			(at 81.28 43.18 0)
+			(at 81.28 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5545,7 +5672,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 81.28 43.18 0)
+			(at 81.28 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5554,7 +5681,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 81.28 43.18 0)
+			(at 81.28 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5563,7 +5690,7 @@
 			)
 		)
 		(property "Mouser Part Number" "651-1984659"
-			(at 81.28 43.18 0)
+			(at 81.28 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5572,7 +5699,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "1984659"
-			(at 81.28 43.18 0)
+			(at 81.28 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5581,7 +5708,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Phoenix Contact"
-			(at 81.28 43.18 0)
+			(at 81.28 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5685,14 +5812,14 @@
 		)
 	)
 	(symbol
-		(lib_id "Jumper:SolderJumper_2_Open")
+		(lib_id "Jumper:Jumper_2_Small_Open")
 		(at 224.79 78.74 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "fbb15ac3-e72c-4eb9-9732-62f17af0726d")
 		(property "Reference" "JP102"
 			(at 224.79 72.39 0)
@@ -5702,7 +5829,7 @@
 				)
 			)
 		)
-		(property "Value" "SolderJumper"
+		(property "Value" "Jumper"
 			(at 224.79 74.93 0)
 			(effects
 				(font
@@ -5710,7 +5837,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Horizontal"
 			(at 224.79 78.74 0)
 			(effects
 				(font
@@ -5728,7 +5855,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Solder Jumper, 2-pole, open"
+		(property "Description" "Jumper, 2-pole, small symbol, open"
 			(at 224.79 78.74 0)
 			(effects
 				(font
