@@ -3399,7 +3399,7 @@
 		(fields_autoplaced yes)
 		(uuid "1c0ec324-9394-4ec7-8f44-a1772c91b6d5")
 		(property "Reference" "D104"
-			(at 154.94 82.8674 90)
+			(at 154.94 81.5974 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3408,7 +3408,7 @@
 			)
 		)
 		(property "Value" "Yellow"
-			(at 154.94 85.4074 90)
+			(at 154.94 84.1374 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3441,6 +3441,16 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Text" "ACT"
+			(at 154.94 86.6774 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(pin "1"
