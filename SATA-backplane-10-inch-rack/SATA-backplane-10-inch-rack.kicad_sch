@@ -3303,6 +3303,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "270R"
+			(at 151.13 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "be86619b-19fe-4d69-a235-dd691c1d0d24")
 		)
@@ -3365,6 +3374,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 128.27 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "1M"
 			(at 128.27 86.36 0)
 			(effects
 				(font
@@ -3453,6 +3471,15 @@
 				(justify right)
 			)
 		)
+		(property "Manufacturer_Part_Number" "Yellow led"
+			(at 151.13 82.55 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "df1a9bc9-821a-4380-9942-12a247485540")
 		)
@@ -3521,6 +3548,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "100uF 6.3V"
+			(at 62.23 111.76 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "eccfaef2-36c5-4138-b029-dbd63c95a764")
 		)
@@ -3581,6 +3617,15 @@
 			)
 		)
 		(property "Description" "Jumper, 2-pole, small symbol, open"
+			(at 77.47 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "PinHeader_1x02_P2.54mm_bended"
 			(at 77.47 99.06 0)
 			(effects
 				(font
@@ -4033,6 +4078,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "NCP1117-3.3_SOT223"
+			(at 201.93 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "2fdabf27-7a1e-46b8-a610-cdf0c3b2c0dd")
 		)
@@ -4194,6 +4248,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 62.23 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "1M"
+			(at 62.23 99.06 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4605,6 +4668,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 106.68 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "100k"
 			(at 106.68 91.44 0)
 			(effects
 				(font
@@ -5643,6 +5715,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "100k"
+			(at 114.3 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "37e8ec35-d02f-4ff7-bf24-a6f624a6ebf3")
 		)
@@ -5703,6 +5784,15 @@
 			)
 		)
 		(property "Description" "Jumper, 2-pole, small symbol, open"
+			(at 224.79 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "PinHeader_1x02_P2.54mm_bended"
 			(at 224.79 78.74 0)
 			(effects
 				(font

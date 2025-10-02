@@ -2885,6 +2885,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "BAT54S"
+			(at 93.98 38.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8caf0eaa-76f0-417c-ab0a-a4a76e40b05a")
 		)
