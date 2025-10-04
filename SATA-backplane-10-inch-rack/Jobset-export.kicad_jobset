@@ -1,0 +1,598 @@
+{
+  "jobs": [
+    {
+      "description": "Clear folder \\Jobset-export\\",
+      "id": "b348f6e4-b892-4c04-9ab9-a353fdf3f4bf",
+      "settings": {
+        "command": "cmd /C \"if exist \"\"Jobset-export\"\" (rmdir /S /Q \"\"Jobset-export\"\")\"\n",
+        "description": "",
+        "ignore_exit_code": false,
+        "output_filename": "arewtvatwg.log",
+        "record_output": false
+      },
+      "type": "special_execute"
+    },
+    {
+      "description": "Create folder \\Jobset-export\\",
+      "id": "1256d768-7d87-4998-a81b-6014657d69a5",
+      "settings": {
+        "command": "cmd /C \"mkdir \"\"Jobset-export\"\" \"",
+        "description": "",
+        "ignore_exit_code": false,
+        "output_filename": "",
+        "record_output": false
+      },
+      "type": "special_execute"
+    },
+    {
+      "description": "",
+      "id": "9ad725bf-9678-438a-ac6d-449e08654cd1",
+      "settings": {
+        "bom_format_preset_name": "Jobset-export",
+        "bom_preset_name": "Jobset-export",
+        "description": "",
+        "exclude_dnp": false,
+        "field_delimiter": "\t",
+        "fields_group_by": [
+          "Value"
+        ],
+        "fields_labels": [
+          "#",
+          "Qty",
+          "Reference",
+          "Value",
+          "Footprint",
+          "Datasheet",
+          "Description",
+          "Manufacturer_Name",
+          "Manufacturer_Part_Number",
+          "Mouser Part Number",
+          "V_{ds}",
+          "DNP",
+          "Text",
+          "Friendly Name",
+          "Eurocircuits P/N",
+          "Dielectric",
+          "DigiKey P/N",
+          "Height",
+          "RS P/N",
+          "STANDARD",
+          "PARTREV",
+          "Sim.Name",
+          "Sim.Pins",
+          "Sim.Device",
+          "Sim.Library",
+          "Partnr",
+          "Mate",
+          "Name",
+          "fit_field",
+          "Field-1",
+          "Size",
+          "License",
+          "ISat",
+          "Public",
+          "Alt. Mfg. P/N",
+          "Current",
+          "IMax",
+          "Alt. Mfg. Name",
+          "MANUFACTURER",
+          "Mfg P/N",
+          "Manufacturer N/P",
+          "Mfg Name",
+          "Approved ETK P/N",
+          "Mouser P/N",
+          "Ratings",
+          "Mfg. Name",
+          "Tolerance",
+          "Mfg. P/N"
+        ],
+        "fields_ordered": [
+          "${ITEM_NUMBER}",
+          "${QUANTITY}",
+          "Reference",
+          "Value",
+          "Footprint",
+          "Datasheet",
+          "Description",
+          "Manufacturer_Name",
+          "Manufacturer_Part_Number",
+          "Mouser Part Number",
+          "V_{ds}",
+          "__${DNP}",
+          "__Text",
+          "__Friendly Name",
+          "__Eurocircuits P/N",
+          "__Dielectric",
+          "__DigiKey P/N",
+          "__Height",
+          "__RS P/N",
+          "__STANDARD",
+          "__PARTREV",
+          "__Sim.Name",
+          "__Sim.Pins",
+          "__Sim.Device",
+          "__Sim.Library",
+          "__Partnr",
+          "__Mate",
+          "__Name",
+          "__fit_field",
+          "__Field-1",
+          "__Size",
+          "__License",
+          "__ISat",
+          "__Public",
+          "__Alt. Mfg. P/N",
+          "__Current",
+          "__IMax",
+          "__Alt. Mfg. Name",
+          "__MANUFACTURER",
+          "__Mfg P/N",
+          "__Manufacturer N/P",
+          "__Mfg Name",
+          "__Approved ETK P/N",
+          "__Mouser P/N",
+          "__Ratings",
+          "__Mfg. Name",
+          "__Tolerance",
+          "__Mfg. P/N"
+        ],
+        "filter_string": "",
+        "include_excluded_from_bom": false,
+        "keep_line_breaks": false,
+        "keep_tabs": false,
+        "output_filename": "Bill-of-Materials.csv",
+        "ref_delimiter": ",",
+        "ref_range_delimiter": "",
+        "sort_asc": true,
+        "sort_field": "Reference",
+        "string_delimiter": ""
+      },
+      "type": "sch_export_bom"
+    },
+    {
+      "description": "",
+      "id": "514a3e99-76bb-4dee-9b88-60dbd2f5ec4e",
+      "settings": {
+        "description": "",
+        "exclude_dnp": false,
+        "exclude_footprints_with_th": false,
+        "format": "ascii",
+        "gerber_board_edge": true,
+        "negate_bottom_x": false,
+        "output_filename": "position-data.pos",
+        "side": "both",
+        "single_file": true,
+        "smd_only": false,
+        "units": "mm",
+        "use_drill_place_file_origin": false
+      },
+      "type": "pcb_export_pos"
+    },
+    {
+      "description": "",
+      "id": "28bc7c52-a472-41cb-ab6c-5361b59034cf",
+      "settings": {
+        "description": "",
+        "drill_origin": "abs",
+        "excellon.combine_pth_npth": true,
+        "excellon.minimal_header": false,
+        "excellon.mirror_y": false,
+        "excellon.oval_drill_route": false,
+        "format": "gerber",
+        "generate_map": true,
+        "gerber_precision": 5,
+        "map_format": "gerberx2",
+        "output_dir": "Jobset-export",
+        "units": "in",
+        "zero_format": "decimal"
+      },
+      "type": "pcb_export_drill"
+    },
+    {
+      "description": "",
+      "id": "ef1d0f89-442e-40ff-b0c1-59733f0a2f9f",
+      "settings": {
+        "black_and_white": true,
+        "create_gerber_job_file": true,
+        "crossout_dnp_footprints_on_fab_layers": false,
+        "description": "",
+        "disable_aperture_macros": false,
+        "drawing_sheet": "",
+        "drill_shape": "full",
+        "hide_dnp_footprints_on_fab_layers": false,
+        "include_netlist_attributes": true,
+        "layers": [
+          "B.Cu",
+          "B.Mask",
+          "B.Paste",
+          "B.SilkS",
+          "B.Fab",
+          "In30.Cu",
+          "In29.Cu",
+          "In28.Cu",
+          "In27.Cu",
+          "In26.Cu",
+          "In25.Cu",
+          "In24.Cu",
+          "In23.Cu",
+          "In22.Cu",
+          "In21.Cu",
+          "In20.Cu",
+          "In19.Cu",
+          "In18.Cu",
+          "In17.Cu",
+          "In16.Cu",
+          "In15.Cu",
+          "In14.Cu",
+          "In13.Cu",
+          "In12.Cu",
+          "In11.Cu",
+          "In10.Cu",
+          "In9.Cu",
+          "In8.Cu",
+          "In7.Cu",
+          "In6.Cu",
+          "In5.Cu",
+          "In4.Cu",
+          "In3.Cu",
+          "In2.Cu",
+          "In1.Cu",
+          "F.Cu",
+          "F.Mask",
+          "F.Paste",
+          "F.SilkS",
+          "F.Fab",
+          "Cmts.User"
+        ],
+        "layers_to_include_on_all_layers": [
+          "Edge.Cuts"
+        ],
+        "mirror": false,
+        "negative": false,
+        "output_filename": "Jobset-export",
+        "plot_drawing_sheet": true,
+        "plot_footprint_values": true,
+        "plot_pad_numbers": true,
+        "plot_ref_des": true,
+        "precision": 5,
+        "sketch_dnp_footprints_on_fab_layers": false,
+        "sketch_pads_on_fab_layers": true,
+        "subtract_solder_mask_from_silk": true,
+        "use_drill_origin": false,
+        "use_protel_file_extension": true,
+        "use_x2_format": true
+      },
+      "type": "pcb_export_gerbers"
+    },
+    {
+      "description": "",
+      "id": "0bcfaaca-4e9d-4b13-8f65-552ce8d9defd",
+      "settings": {
+        "description": "",
+        "output_filename": ""
+      },
+      "type": "pcb_export_ipcd356"
+    },
+    {
+      "description": "Render PNG top",
+      "id": "5ca2c9ab-27ba-41cb-b8f7-fa85a39e8e1b",
+      "settings": {
+        "anti_alias": true,
+        "bg_style": "default",
+        "description": "",
+        "floor": false,
+        "format": "png",
+        "height": 1440,
+        "light_bottom_intensity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "light_camera_intensity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "light_side_elevation": 60,
+        "light_side_intensity": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "light_top_intensity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "output_filename": "render-top.png",
+        "pan_x": 0.0,
+        "pan_y": 0.0,
+        "pan_z": 0.0,
+        "perspective": false,
+        "pivot_x": 0.0,
+        "pivot_y": 0.0,
+        "pivot_z": 0.0,
+        "post_process": false,
+        "preset": "",
+        "procedural_textures": false,
+        "quality": "user",
+        "rotation_x": 0.0,
+        "rotation_y": 0.0,
+        "rotation_z": 0.0,
+        "side": "top",
+        "use_board_stackup_colors": true,
+        "width": 3440,
+        "zoom": 1.0
+      },
+      "type": "pcb_render"
+    },
+    {
+      "description": "Render PNG bottom",
+      "id": "1deca658-9820-4d9e-993e-4f6e1d45ef98",
+      "settings": {
+        "anti_alias": true,
+        "bg_style": "default",
+        "description": "",
+        "floor": false,
+        "format": "png",
+        "height": 1440,
+        "light_bottom_intensity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "light_camera_intensity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "light_side_elevation": 60,
+        "light_side_intensity": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "light_top_intensity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "output_filename": "render-bottom.png",
+        "pan_x": 0.0,
+        "pan_y": 0.0,
+        "pan_z": 0.0,
+        "perspective": false,
+        "pivot_x": 0.0,
+        "pivot_y": 0.0,
+        "pivot_z": 0.0,
+        "post_process": false,
+        "preset": "",
+        "procedural_textures": false,
+        "quality": "user",
+        "rotation_x": 0.0,
+        "rotation_y": 0.0,
+        "rotation_z": 0.0,
+        "side": "bottom",
+        "use_board_stackup_colors": true,
+        "width": 3440,
+        "zoom": 1.0
+      },
+      "type": "pcb_render"
+    },
+    {
+      "description": "Export Schematic PDF",
+      "id": "656516f6-f71e-414d-a945-833f3d599fd3",
+      "settings": {
+        "black_and_white": false,
+        "color_theme": "KiCad Classic",
+        "description": "",
+        "drawing_sheet": "",
+        "format": "pdf",
+        "hpgl_page_size": "default",
+        "hpgl_pen_size": 1.016,
+        "hpgl_plot_origin": "A3",
+        "min_pen_width": 847,
+        "output_dir": "Jobset-export",
+        "page_size": "auto",
+        "pdf_hierarchical_links": true,
+        "pdf_metadata": true,
+        "pdf_property_popups": true,
+        "plot_all": true,
+        "plot_drawing_sheet": true,
+        "use_background_color": true
+      },
+      "type": "sch_export_plot_pdf"
+    },
+    {
+      "description": "Export Layout PDF",
+      "id": "b6f32054-6026-4eb0-80f3-92b4050614f5",
+      "settings": {
+        "back_fp_property_popups": false,
+        "black_and_white": false,
+        "color_theme": "",
+        "crossout_dnp_footprints_on_fab_layers": false,
+        "description": "",
+        "drawing_sheet": "",
+        "drill_shape": "full",
+        "front_fp_property_popups": false,
+        "hide_dnp_footprints_on_fab_layers": false,
+        "layers": [
+          "B.Cu",
+          "B.Mask",
+          "B.Paste",
+          "B.SilkS",
+          "B.Fab",
+          "In30.Cu",
+          "In29.Cu",
+          "In28.Cu",
+          "In27.Cu",
+          "In26.Cu",
+          "In25.Cu",
+          "In24.Cu",
+          "In23.Cu",
+          "In22.Cu",
+          "In21.Cu",
+          "In20.Cu",
+          "In19.Cu",
+          "In18.Cu",
+          "In17.Cu",
+          "In16.Cu",
+          "In15.Cu",
+          "In14.Cu",
+          "In13.Cu",
+          "In12.Cu",
+          "In11.Cu",
+          "In10.Cu",
+          "In9.Cu",
+          "In8.Cu",
+          "In7.Cu",
+          "In6.Cu",
+          "In5.Cu",
+          "In4.Cu",
+          "In3.Cu",
+          "In2.Cu",
+          "In1.Cu",
+          "F.Cu",
+          "F.Mask",
+          "F.Paste",
+          "F.SilkS",
+          "F.Fab",
+          "Cmts.User"
+        ],
+        "layers_to_include_on_all_layers": [
+          "Edge.Cuts"
+        ],
+        "mirror": false,
+        "negative": false,
+        "output_filename": "Jobset-export",
+        "pdf_gen_mode": "all-layers-separate-files",
+        "pdf_metadata": false,
+        "plot_drawing_sheet": false,
+        "plot_footprint_values": true,
+        "plot_pad_numbers": true,
+        "plot_ref_des": true,
+        "single_document": false,
+        "sketch_dnp_footprints_on_fab_layers": false,
+        "sketch_pads_on_fab_layers": true,
+        "subtract_solder_mask_from_silk": false,
+        "use_drill_origin": false
+      },
+      "type": "pcb_export_pdf"
+    },
+    {
+      "description": "Generate timestamp and commit id",
+      "id": "7a0e05ab-515e-4640-8f05-9d7698600f64",
+      "settings": {
+        "command": "powershell -NoLogo -NoProfile -Command \"$t='UTC timestamp: '+((Get-Date).ToUniversalTime().ToString('yyyy-MM-ddTHH:mm:ss') + 'Z'); $g='Git-ID: '+(git rev-parse HEAD).Trim(); $text=$t+\\\"`n\\\"+$g; [IO.File]::WriteAllText('Jobset-export\\export_id.txt', $text, [Text.Encoding]::ASCII)\"",
+        "description": "",
+        "ignore_exit_code": false,
+        "output_filename": "7a0e05ab-515e-4640-8f05-9d7698600f64.log",
+        "record_output": false
+      },
+      "type": "special_execute"
+    },
+    {
+      "description": "Zip-it!",
+      "id": "061a906b-dd99-4e97-b4fd-f29ca073a1d5",
+      "settings": {
+        "command": "powershell -NoLogo -NoProfile -Command \"$timestamp = ((Get-Date).ToUniversalTime().ToString('yyyy-MM-ddTHH:mm:ss') -replace ':', '-') + 'Z'; Compress-Archive -Path 'Jobset-export' -DestinationPath ('Jobset-export\\\\Jobset-export_' + $timestamp + '.zip')\"\n",
+        "description": "",
+        "ignore_exit_code": false,
+        "output_filename": "061a906b-dd99-4e97-b4fd-f29ca073a1d5.log",
+        "record_output": false
+      },
+      "type": "special_execute"
+    },
+    {
+      "description": "Export script completed dialog box",
+      "id": "92e16a42-33da-4e9b-95e0-cf4d8ea15656",
+      "settings": {
+        "command": "powershell -NoLogo -NoProfile -Command \"[void][System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); [System.Windows.Forms.MessageBox]::Show('Export script completed','Info',[System.Windows.Forms.MessageBoxButtons]::OK,[System.Windows.Forms.MessageBoxIcon]::Information)\"\n",
+        "description": "",
+        "ignore_exit_code": false,
+        "output_filename": "",
+        "record_output": false
+      },
+      "type": "special_execute"
+    }
+  ],
+  "meta": {
+    "version": 1
+  },
+  "outputs": [
+    {
+      "description": "Setup export folder",
+      "id": "8c8fa5ab-49e3-472b-a92a-f916af847f7f",
+      "only": [
+        "b348f6e4-b892-4c04-9ab9-a353fdf3f4bf",
+        "1256d768-7d87-4998-a81b-6014657d69a5",
+        "0bcfaaca-4e9d-4b13-8f65-552ce8d9defd",
+        "514a3e99-76bb-4dee-9b88-60dbd2f5ec4e",
+        "9ad725bf-9678-438a-ac6d-449e08654cd1"
+      ],
+      "settings": {
+        "output_path": "Jobset-export"
+      },
+      "type": "folder"
+    },
+    {
+      "description": "Bill of Materials",
+      "id": "b9686dba-fd0d-4703-92ed-600de0ac2673",
+      "only": [
+        "9ad725bf-9678-438a-ac6d-449e08654cd1"
+      ],
+      "settings": {
+        "output_path": "Jobset-export"
+      },
+      "type": "folder"
+    },
+    {
+      "description": "Drills & & Gerbers",
+      "id": "33158736-feb6-482e-81ee-3aaebca7c785",
+      "only": [
+        "ef1d0f89-442e-40ff-b0c1-59733f0a2f9f",
+        "28bc7c52-a472-41cb-ab6c-5361b59034cf"
+      ],
+      "settings": {
+        "output_path": "Jobset-export//Gerbers"
+      },
+      "type": "folder"
+    },
+    {
+      "description": "Render images",
+      "id": "40b12962-97e3-4cac-82ea-da4e439a311e",
+      "only": [
+        "5ca2c9ab-27ba-41cb-b8f7-fa85a39e8e1b",
+        "1deca658-9820-4d9e-993e-4f6e1d45ef98"
+      ],
+      "settings": {
+        "output_path": "Jobset-export//Renders"
+      },
+      "type": "folder"
+    },
+    {
+      "description": "Schematic & Layout PDF",
+      "id": "843bad96-810a-4d6e-825c-fb1ceeb293a8",
+      "only": [
+        "b6f32054-6026-4eb0-80f3-92b4050614f5"
+      ],
+      "settings": {
+        "output_path": "Jobset-export//PDF"
+      },
+      "type": "folder"
+    },
+    {
+      "description": "Zip-it!",
+      "id": "0de5dc57-87f5-4048-bd3b-aa5d273691ca",
+      "only": [
+        "7a0e05ab-515e-4640-8f05-9d7698600f64",
+        "061a906b-dd99-4e97-b4fd-f29ca073a1d5",
+        "92e16a42-33da-4e9b-95e0-cf4d8ea15656"
+      ],
+      "settings": {
+        "output_path": "Jobset-export"
+      },
+      "type": "folder"
+    }
+  ]
+}

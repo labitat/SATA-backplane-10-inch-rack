@@ -25,3 +25,6 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+
+*/Jobset-export/*
+!*/Jobset-export/Jobset-export*.zip
