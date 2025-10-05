@@ -182,7 +182,7 @@
         "generate_map": true,
         "gerber_precision": 5,
         "map_format": "gerberx2",
-        "output_dir": "Jobset-export",
+        "output_dir": "",
         "units": "in",
         "zero_format": "decimal"
       },
@@ -193,7 +193,7 @@
       "id": "ef1d0f89-442e-40ff-b0c1-59733f0a2f9f",
       "settings": {
         "black_and_white": true,
-        "create_gerber_job_file": true,
+        "create_gerber_job_file": false,
         "crossout_dnp_footprints_on_fab_layers": false,
         "description": "",
         "disable_aperture_macros": false,
@@ -242,15 +242,16 @@
           "F.Paste",
           "F.SilkS",
           "F.Fab",
-          "Cmts.User"
+          "Dwgs.User",
+          "Edge.Cuts"
         ],
         "layers_to_include_on_all_layers": [
           "Edge.Cuts"
         ],
         "mirror": false,
         "negative": false,
-        "output_filename": "Jobset-export",
-        "plot_drawing_sheet": true,
+        "output_filename": "",
+        "plot_drawing_sheet": false,
         "plot_footprint_values": true,
         "plot_pad_numbers": true,
         "plot_ref_des": true,
@@ -258,7 +259,7 @@
         "sketch_dnp_footprints_on_fab_layers": false,
         "sketch_pads_on_fab_layers": true,
         "subtract_solder_mask_from_silk": true,
-        "use_drill_origin": false,
+        "use_drill_origin": true,
         "use_protel_file_extension": true,
         "use_x2_format": true
       },
@@ -392,7 +393,7 @@
         "hpgl_pen_size": 1.016,
         "hpgl_plot_origin": "A3",
         "min_pen_width": 847,
-        "output_dir": "Jobset-export",
+        "output_dir": "",
         "page_size": "auto",
         "pdf_hierarchical_links": true,
         "pdf_metadata": true,
@@ -464,7 +465,7 @@
         ],
         "mirror": false,
         "negative": false,
-        "output_filename": "Jobset-export",
+        "output_filename": "",
         "pdf_gen_mode": "all-layers-separate-files",
         "pdf_metadata": false,
         "plot_drawing_sheet": false,
@@ -547,11 +548,11 @@
       "type": "folder"
     },
     {
-      "description": "Drills & & Gerbers",
+      "description": "Drills and Gerbers",
       "id": "33158736-feb6-482e-81ee-3aaebca7c785",
       "only": [
-        "ef1d0f89-442e-40ff-b0c1-59733f0a2f9f",
-        "28bc7c52-a472-41cb-ab6c-5361b59034cf"
+        "28bc7c52-a472-41cb-ab6c-5361b59034cf",
+        "ef1d0f89-442e-40ff-b0c1-59733f0a2f9f"
       ],
       "settings": {
         "output_path": "Jobset-export//Gerbers"
@@ -562,8 +563,7 @@
       "description": "Render images",
       "id": "40b12962-97e3-4cac-82ea-da4e439a311e",
       "only": [
-        "5ca2c9ab-27ba-41cb-b8f7-fa85a39e8e1b",
-        "1deca658-9820-4d9e-993e-4f6e1d45ef98"
+        "5ca2c9ab-27ba-41cb-b8f7-fa85a39e8e1b"
       ],
       "settings": {
         "output_path": "Jobset-export//Renders"

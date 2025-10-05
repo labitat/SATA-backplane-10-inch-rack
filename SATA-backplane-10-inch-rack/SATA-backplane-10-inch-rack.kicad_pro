@@ -560,7 +560,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "Jobset-export",
+      "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "SATA-backplane-10-inch-rack.step",
@@ -757,12 +757,6 @@
           "label": "DNP",
           "name": "${DNP}",
           "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Text",
-          "name": "Text",
-          "show": false
         }
       ],
       "filter_string": "",
@@ -770,7 +764,7 @@
       "include_excluded_from_bom": false,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Reference"
+      "sort_field": ""
     },
     "connection_grid_size": 50.0,
     "drawing": {
