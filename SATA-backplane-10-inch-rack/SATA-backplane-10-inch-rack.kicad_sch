@@ -862,6 +862,101 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Graphic:SYM_Arrow_Tiny"
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(property "Reference" "#SYM"
+				(at 0 1.524 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "SYM_Arrow_Tiny"
+				(at 0.254 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Filled arrow, 100mil"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Enable" "0"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "symbol arrow"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SYM_Arrow_Tiny_0_1"
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 0.508 -0.254) (xy 0.508 0.254) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Jumper:Jumper_2_Small_Open"
 			(pin_numbers
 				(hide yes)
@@ -3249,6 +3344,71 @@
 		)
 	)
 	(symbol
+		(lib_id "Graphic:SYM_Arrow_Tiny")
+		(at 13.97 186.69 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "07a8703f-94c7-4e4c-b14c-71922a26c25d")
+		(property "Reference" "SYM705"
+			(at 15.494 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 12.7 186.944 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Symbol:KiCad-Logo2_8mm_SilkScreen"
+			(at 15.24 186.6899 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 13.97 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 13.97 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "SATA-backplane-10-inch-rack"
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
+					(reference "SYM705")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 151.13 73.66 180)
 		(unit 1)
@@ -3258,7 +3418,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1b80f9dc-93ed-4245-b589-2f4fa7c1e42c")
-		(property "Reference" "R102"
+		(property "Reference" "R701"
 			(at 153.67 72.3899 0)
 			(effects
 				(font
@@ -3303,7 +3463,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "270R"
+		(property "Manufacturer_Part_Number" "AC0805FR-07270RL"
+			(at 151.13 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "603-AC0805FR-07270RL"
 			(at 151.13 73.66 0)
 			(effects
 				(font
@@ -3321,7 +3490,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "R102")
+					(reference "R701")
 					(unit 1)
 				)
 			)
@@ -3337,7 +3506,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1c022bc2-f12e-47ef-a07d-5dd7d1b11488")
-		(property "Reference" "R103"
+		(property "Reference" "R702"
 			(at 130.81 85.0899 0)
 			(effects
 				(font
@@ -3382,7 +3551,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "1M"
+		(property "Manufacturer_Part_Number" "AC0805FR-071ML"
+			(at 128.27 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "603-AC0805FR-071ML"
 			(at 128.27 86.36 0)
 			(effects
 				(font
@@ -3400,7 +3578,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "R103")
+					(reference "R702")
 					(unit 1)
 				)
 			)
@@ -3416,8 +3594,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1c0ec324-9394-4ec7-8f44-a1772c91b6d5")
-		(property "Reference" "D104"
-			(at 154.94 81.5974 90)
+		(property "Reference" "D704"
+			(at 154.94 82.8674 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3426,7 +3604,7 @@
 			)
 		)
 		(property "Value" "Yellow"
-			(at 154.94 84.1374 90)
+			(at 154.94 85.4074 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3461,17 +3639,16 @@
 				(hide yes)
 			)
 		)
-		(property "Text" "ACT"
-			(at 154.94 86.6774 90)
-			(show_name yes)
+		(property "Manufacturer_Part_Number" "LTL-4251N"
+			(at 151.13 82.55 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "Yellow led"
+		(property "Mouser Part Number" "859-LTL-4251N"
 			(at 151.13 82.55 90)
 			(effects
 				(font
@@ -3489,7 +3666,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "D104")
+					(reference "D704")
 					(unit 1)
 				)
 			)
@@ -3505,7 +3682,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1c9a4325-81bb-4a45-910b-23e0c91fac80")
-		(property "Reference" "C104"
+		(property "Reference" "C704"
 			(at 62.2363 105.41 90)
 			(effects
 				(font
@@ -3548,7 +3725,25 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "100uF 6.3V"
+		(property "Manufacturer_Part_Number" "JMK325BJ107MM-T"
+			(at 62.23 111.76 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Taiyo Yuden"
+			(at 62.23 111.76 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "963-JMK325BJ107MM-T"
 			(at 62.23 111.76 90)
 			(effects
 				(font
@@ -3566,7 +3761,7 @@
 		(instances
 			(project ""
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "C104")
+					(reference "C704")
 					(unit 1)
 				)
 			)
@@ -3582,7 +3777,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1f97e7ab-30ff-4ec6-b2db-8e966d7abdf3")
-		(property "Reference" "JP101"
+		(property "Reference" "JP702"
 			(at 77.47 92.71 0)
 			(effects
 				(font
@@ -3625,7 +3820,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "PinHeader_1x02_P2.54mm_bended"
+		(property "Manufacturer_Part_Number" "22-28-8024"
+			(at 77.47 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "538-22-28-8024"
 			(at 77.47 99.06 0)
 			(effects
 				(font
@@ -3643,7 +3847,7 @@
 		(instances
 			(project ""
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "JP101")
+					(reference "JP702")
 					(unit 1)
 				)
 			)
@@ -3659,7 +3863,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3b639874-6348-4894-8152-31096e8bb1cd")
-		(property "Reference" "#PWR0101"
+		(property "Reference" "#PWR0701"
 			(at 132.08 41.91 0)
 			(effects
 				(font
@@ -3709,7 +3913,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0101")
+					(reference "#PWR0701")
 					(unit 1)
 				)
 			)
@@ -3725,7 +3929,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3d7353d3-4c3f-4b97-9b86-47116b61efc0")
-		(property "Reference" "#PWR0111"
+		(property "Reference" "#PWR0712"
 			(at 151.13 113.03 0)
 			(effects
 				(font
@@ -3775,7 +3979,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0111")
+					(reference "#PWR0712")
 					(unit 1)
 				)
 			)
@@ -3791,7 +3995,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "459117f2-676c-4c18-81e9-b9119535d3ee")
-		(property "Reference" "#PWR0109"
+		(property "Reference" "#PWR0713"
 			(at 55.88 119.38 0)
 			(effects
 				(font
@@ -3841,7 +4045,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0109")
+					(reference "#PWR0713")
 					(unit 1)
 				)
 			)
@@ -3857,7 +4061,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4e0647ef-b012-4faf-91a3-785d60e6128c")
-		(property "Reference" "#PWR0106"
+		(property "Reference" "#PWR0706"
 			(at 233.68 57.15 0)
 			(effects
 				(font
@@ -3907,7 +4111,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0106")
+					(reference "#PWR0706")
 					(unit 1)
 				)
 			)
@@ -3923,7 +4127,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "517b475f-3fd6-4436-974e-59aa86ad336a")
-		(property "Reference" "Q101"
+		(property "Reference" "Q701"
 			(at 154.94 93.4084 0)
 			(effects
 				(font
@@ -4019,7 +4223,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "Q101")
+					(reference "Q701")
 					(unit 1)
 				)
 			)
@@ -4035,7 +4239,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "56d80fcb-11d8-4a35-9af5-5f9fe3f49509")
-		(property "Reference" "U1"
+		(property "Reference" "U701"
 			(at 201.93 72.39 0)
 			(effects
 				(font
@@ -4043,7 +4247,7 @@
 				)
 			)
 		)
-		(property "Value" "NCP1117-3.3_SOT223"
+		(property "Value" "LDI1117-3.3H"
 			(at 201.93 74.93 0)
 			(effects
 				(font
@@ -4078,7 +4282,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "NCP1117-3.3_SOT223"
+		(property "Manufacturer_Part_Number" "LDI1117-3.3H"
+			(at 201.93 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "637-LDI1117-3.3H"
 			(at 201.93 78.74 0)
 			(effects
 				(font
@@ -4099,7 +4312,7 @@
 		(instances
 			(project ""
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "U1")
+					(reference "U701")
 					(unit 1)
 				)
 			)
@@ -4115,7 +4328,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5735f890-7303-491d-ae02-4166aafd53b9")
-		(property "Reference" "C103"
+		(property "Reference" "C703"
 			(at 237.49 42.2909 0)
 			(effects
 				(font
@@ -4196,7 +4409,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "C103")
+					(reference "C703")
 					(unit 1)
 				)
 			)
@@ -4212,7 +4425,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5cfe4b7c-59e5-48f8-9ff6-8f85ab96ff6e")
-		(property "Reference" "R101"
+		(property "Reference" "R704"
 			(at 62.23 92.71 90)
 			(effects
 				(font
@@ -4255,7 +4468,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "1M"
+		(property "Manufacturer_Part_Number" "AC0805FR-071ML"
+			(at 62.23 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "603-AC0805FR-071ML"
 			(at 62.23 99.06 90)
 			(effects
 				(font
@@ -4273,7 +4495,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "R101")
+					(reference "R704")
 					(unit 1)
 				)
 			)
@@ -4289,7 +4511,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6098626a-4f6d-4dbf-a1a9-92135d87dd79")
-		(property "Reference" "#PWR0104"
+		(property "Reference" "#PWR0704"
 			(at 132.08 57.15 0)
 			(effects
 				(font
@@ -4339,7 +4561,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0104")
+					(reference "#PWR0704")
 					(unit 1)
 				)
 			)
@@ -4355,7 +4577,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "60f951a2-20bf-417f-a257-6b6533401b57")
-		(property "Reference" "D102"
+		(property "Reference" "D702"
 			(at 167.64 42.9259 90)
 			(effects
 				(font
@@ -4436,7 +4658,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "D102")
+					(reference "D702")
 					(unit 1)
 				)
 			)
@@ -4453,7 +4675,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "68d57c8e-8624-4035-a403-300d2707c96e")
-		(property "Reference" "#PWR0107"
+		(property "Reference" "#PWR0707"
 			(at 151.13 72.39 0)
 			(effects
 				(font
@@ -4503,7 +4725,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0107")
+					(reference "#PWR0707")
 					(unit 1)
 				)
 			)
@@ -4519,7 +4741,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "73a13868-aa50-4817-b277-dde9dc58effe")
-		(property "Reference" "Q102"
+		(property "Reference" "Q702"
 			(at 132.08 98.4884 0)
 			(effects
 				(font
@@ -4615,7 +4837,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "Q102")
+					(reference "Q702")
 					(unit 1)
 				)
 			)
@@ -4631,7 +4853,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "78074283-48c8-4a19-9da2-cc5d18e8e36f")
-		(property "Reference" "R105"
+		(property "Reference" "R703"
 			(at 104.14 90.1699 0)
 			(effects
 				(font
@@ -4676,7 +4898,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "100k"
+		(property "Manufacturer_Part_Number" "AC0805FR-07100KL"
+			(at 106.68 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" " 603-AC0805FR-07100KL"
 			(at 106.68 91.44 0)
 			(effects
 				(font
@@ -4694,7 +4925,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "R105")
+					(reference "R703")
 					(unit 1)
 				)
 			)
@@ -4711,7 +4942,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7833138c-8732-4fdf-bea4-5ab1fe6c6d41")
-		(property "Reference" "#PWR0103"
+		(property "Reference" "#PWR0703"
 			(at 233.68 41.91 0)
 			(effects
 				(font
@@ -4761,7 +4992,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0103")
+					(reference "#PWR0703")
 					(unit 1)
 				)
 			)
@@ -4777,7 +5008,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7b1b0658-2cd3-4de1-b420-6e8691ed7de0")
-		(property "Reference" "#PWR0113"
+		(property "Reference" "#PWR0710"
 			(at 201.93 92.71 0)
 			(effects
 				(font
@@ -4827,7 +5058,72 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0113")
+					(reference "#PWR0710")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Graphic:SYM_Arrow_Tiny")
+		(at 13.97 182.88 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7e1d42ed-386a-4969-adda-3d4f35dea7d2")
+		(property "Reference" "SYM702"
+			(at 15.494 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 12.7 183.134 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Symbol:WEEE-Logo_8.4x12mm_SilkScreen"
+			(at 15.24 182.8799 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 13.97 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 13.97 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "SATA-backplane-10-inch-rack"
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
+					(reference "SYM702")
 					(unit 1)
 				)
 			)
@@ -4843,7 +5139,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7ecc5e81-58c2-455d-ba60-5476fe6e67d4")
-		(property "Reference" "#PWR0105"
+		(property "Reference" "#PWR0705"
 			(at 182.88 57.15 0)
 			(effects
 				(font
@@ -4893,7 +5189,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0105")
+					(reference "#PWR0705")
 					(unit 1)
 				)
 			)
@@ -4909,7 +5205,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "85cb89c4-3573-405d-85fe-65b89e8fbb61")
-		(property "Reference" "C101"
+		(property "Reference" "C701"
 			(at 135.89 42.2909 0)
 			(effects
 				(font
@@ -4990,7 +5286,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "C101")
+					(reference "C701")
 					(unit 1)
 				)
 			)
@@ -5006,7 +5302,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9828fbc0-2f53-429a-a30b-029965f14af9")
-		(property "Reference" "#PWR0110"
+		(property "Reference" "#PWR0711"
 			(at 128.27 113.03 0)
 			(effects
 				(font
@@ -5056,7 +5352,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0110")
+					(reference "#PWR0711")
 					(unit 1)
 				)
 			)
@@ -5073,7 +5369,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a67058c9-947b-41d8-8569-2e76a94eb5ee")
-		(property "Reference" "#PWR0102"
+		(property "Reference" "#PWR0702"
 			(at 182.88 41.91 0)
 			(effects
 				(font
@@ -5123,7 +5419,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0102")
+					(reference "#PWR0702")
 					(unit 1)
 				)
 			)
@@ -5139,7 +5435,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b3ab171c-d228-4c8d-85e5-0e5be173a12d")
-		(property "Reference" "C102"
+		(property "Reference" "C702"
 			(at 186.69 42.2909 0)
 			(effects
 				(font
@@ -5220,7 +5516,137 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "C102")
+					(reference "C702")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Graphic:SYM_Arrow_Tiny")
+		(at 13.97 194.31 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bc733dab-89d5-43aa-830a-a8ae2d360ec7")
+		(property "Reference" "SYM701"
+			(at 15.494 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 12.7 194.564 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Symbol:Symbol_CreativeCommonsPublicDomain_SilkScreenTop_Small"
+			(at 15.24 194.3099 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 13.97 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 13.97 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project ""
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
+					(reference "SYM701")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Graphic:SYM_Arrow_Tiny")
+		(at 13.97 190.5 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ca531d3d-23db-4054-a09c-1c2daf8ac555")
+		(property "Reference" "SYM704"
+			(at 15.494 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "~"
+			(at 12.7 190.754 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Symbol:OSHW-Logo2_14.6x12mm_SilkScreen"
+			(at 15.24 190.4999 90)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 13.97 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 13.97 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "SATA-backplane-10-inch-rack"
+				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
+					(reference "SYM704")
 					(unit 1)
 				)
 			)
@@ -5237,7 +5663,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cfc9f4b0-3bad-40f8-aa06-d0071fb59177")
-		(property "Reference" "#PWR0108"
+		(property "Reference" "#PWR0708"
 			(at 128.27 83.82 0)
 			(effects
 				(font
@@ -5287,7 +5713,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0108")
+					(reference "#PWR0708")
 					(unit 1)
 				)
 			)
@@ -5303,7 +5729,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dacadac6-a537-4eea-8031-869b1298680a")
-		(property "Reference" "D103"
+		(property "Reference" "D703"
 			(at 218.44 42.9259 90)
 			(effects
 				(font
@@ -5384,7 +5810,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "D103")
+					(reference "D703")
 					(unit 1)
 				)
 			)
@@ -5400,7 +5826,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dd2f3589-6a8a-446b-99f9-d2c2bde26851")
-		(property "Reference" "D101"
+		(property "Reference" "D701"
 			(at 116.84 42.9259 90)
 			(effects
 				(font
@@ -5481,7 +5907,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "D101")
+					(reference "D701")
 					(unit 1)
 				)
 			)
@@ -5498,7 +5924,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e76902fc-9140-4887-bc71-ea8d7485145e")
-		(property "Reference" "#PWR0112"
+		(property "Reference" "#PWR0709"
 			(at 106.68 88.9 0)
 			(effects
 				(font
@@ -5548,7 +5974,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "#PWR0112")
+					(reference "#PWR0709")
 					(unit 1)
 				)
 			)
@@ -5563,7 +5989,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e9928738-3c60-4044-a74d-f40578f71360")
-		(property "Reference" "J101"
+		(property "Reference" "J701"
 			(at 78.74 45.7201 0)
 			(effects
 				(font
@@ -5581,7 +6007,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TerminalBlock_Phoenix_PT-1,5-6-3.5-H_1x06_P3.50mm_Horizontal"
+		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-6-3.5-H_1x06_P3.50mm_Horizontal"
 			(at 81.28 45.72 0)
 			(effects
 				(font
@@ -5656,7 +6082,7 @@
 		(instances
 			(project ""
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "J101")
+					(reference "J701")
 					(unit 1)
 				)
 			)
@@ -5672,7 +6098,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ebbb3f52-800c-47f4-af10-52895e28250b")
-		(property "Reference" "R104"
+		(property "Reference" "R705"
 			(at 114.3 92.71 90)
 			(effects
 				(font
@@ -5715,7 +6141,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "100k"
+		(property "Manufacturer_Part_Number" "AC0805FR-07100KL"
+			(at 114.3 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" " 603-AC0805FR-07100KL"
 			(at 114.3 99.06 90)
 			(effects
 				(font
@@ -5733,7 +6168,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "R104")
+					(reference "R705")
 					(unit 1)
 				)
 			)
@@ -5749,7 +6184,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fbb15ac3-e72c-4eb9-9732-62f17af0726d")
-		(property "Reference" "JP102"
+		(property "Reference" "JP701"
 			(at 224.79 72.39 0)
 			(effects
 				(font
@@ -5792,7 +6227,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "PinHeader_1x02_P2.54mm_bended"
+		(property "Manufacturer_Part_Number" "22-28-8024"
+			(at 224.79 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "538-22-28-8024"
 			(at 224.79 78.74 0)
 			(effects
 				(font
@@ -5810,7 +6254,7 @@
 		(instances
 			(project "SATA-backplane-10-inch-rack"
 				(path "/c1a10ee3-1b0d-4235-ba02-c6ac86e8d48c"
-					(reference "JP102")
+					(reference "JP701")
 					(unit 1)
 				)
 			)
