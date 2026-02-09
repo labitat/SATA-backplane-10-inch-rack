@@ -1,0 +1,58 @@
+# ========================================
+# Fresh Ubuntu Core 24 (64-bit) on RPi5
+# + 13 SSDs on a PCIe SATA card (SA3120 or similar)
+# Goal: boot fast, RAID6 auto-assembled and mounted at /mnt/raid
+# ========================================
+
+# Flash Ubuntu Core 24 (64-bit) to SD card
+
+# First boot – enable serial console and PCIe Gen3
+sudo tee /boot/firmware/config.txt > /dev/null <<EOF
+dtparam=pciex1
+dtparam=pciex1_gen=3
+dtoverlay=pciex1-compat-pi5,no-mip
+dtoverlay=disable-bt
+EOF
+
+sudo apt update
+sudo apt upgrade
+
+# Reboot once so PCIe card is detected
+#sudo reboot
+
+# Install mdadm raid driver
+sudo apt install mdadm -y
+
+# Assemble the existing RAID6 (your array already has metadata)
+sudo mdadm --assemble --scan --verbose
+# You should now have /dev/md127 active with 13/13 disks
+
+# Give the array a friendly name (optional but nice)
+#sudo mdadm --detail --scan | sudo tee -a /etc/mdadm/mdadm.conf
+
+# Create mountpoint
+sudo mkdir -p /mnt/raid
+
+# 8. Mount it once to get the real UUID
+sudo mount /dev/md127 /mnt/raid
+sudo blkid /dev/md127   # note the UUID (it will be the btrfs one)
+
+# Add correct fstab entry (btrfs + nofail + compression) Replace UUID with that of the previous step
+sudo sh -c 'cat >> /etc/fstab <<EOF
+UUID=a93ea020-9ee3-45b9-beac-63c9a3f4ef77 /mnt/raid btrfs defaults,noatime,compress=zstd,nofail 0 2
+EOF'
+
+# Update initramfs so the array is assembled early in boot
+sudo update-initramfs -u
+
+# Test mount
+sudo mount -a
+df -h /mnt/raid   # ← should show raid details
+
+# Fix sulogin "press Enter" forever loop when root is locked
+echo "tty1" | sudo tee -a /etc/securetty
+
+# Final reboot – everything must come up clean
+sudo reboot
+
+

@@ -1,0 +1,350 @@
+Materials:
+- Raspberry Pi 5
+- 64GB TFcard with Raspberry Pi OS (Legacy, 64-bit) Lite "Debian Bookworm"
+- Waveshare Pi5 Connector Adapter
+- Waveshare PCIe to PCIe Board
+- SU-SA3120J PICe to SATA expander
+- 20 x Kingston SV300S37A 240GB SATA SSD
+
+# You will need a domain pointing to your server and the ability to open ports 80 and 443 on your router (dont do it yet).
+
+# enable PCIe Gen3
+sudo nano /boot/firmware/config.txt
+[all]
+dtparam=pciex1
+dtparam=pciex1_gen=3
+dtoverlay=pciex1-compat-pi5,no-mip
+dtoverlay=disable-bt
+######End Of File###^Z
+
+# Reboot once so PCIe card is detected
+sudo reboot
+
+sudo apt update
+sudo apt upgrade
+
+
+# install mdadm raid driver
+sudo apt install mdadm -y
+
+# optional: install additional raid and rescue packages
+
+
+# create a raid 1 array of two disks (shown below as md1) for the linux system using mdadm
+blkid
+/dev/mmcblk0p1:	LABEL_FATBOOT="bootfs"	LABEL="bootfs"		UUID="1515-D8F3"										BLOCK_SIZE="512"					TYPE="vfat"		PARTUUID="2beb2a65-01"
+/dev/mmcblk0p2:							LABEL="rootfs"		UUID="0b68493e-4b4c-43aa-b88d-df23601fa0e0"				BLOCK_SIZE="4096"					TYPE="ext4"		PARTUUID="2beb2a65-02"
+/dev/sdb:								LABEL="omvpi5:1"	UUID="f79338bc-26ae-4aa3-504e-a5b27595d2c2"	UUID_SUB="b5f6f437-0957-8062-eff1-555152ae85c8"	TYPE="linux_raid_member"
+/dev/sda:								LABEL="omvpi5:1"	UUID="f79338bc-26ae-4aa3-504e-a5b27595d2c2"	UUID_SUB="d7b3ada0-36f5-9b36-6da1-3ad13bb72078"	TYPE="linux_raid_member"
+/dev/md1p1:		LABEL_FATBOOT="bootfs"	LABEL="bootfs"		UUID="1515-D8F3"										BLOCK_SIZE="512"					TYPE="vfat"		PARTUUID="9e020a5c-01"
+/dev/md1p2:								LABEL="rootfs"		UUID="0b68493e-4b4c-43aa-b88d-df23601fa0e0"				BLOCK_SIZE="4096"					TYPE="ext4"		PARTUUID="9e020a5c-02"
+
+# Use SSH or download Raspberry Pi OS (Legacy, 64-bit) Lite "Debian Bookworm" image onto the home directory
+# Then extract the image
+xz -d 2025-11-24-raspios-bookworm-arm64-lite.img.xz
+
+# install the image onto /dev/md1
+sudo dd if=2025-11-24-raspios-bookworm-arm64-lite.img of=/dev/md1 bs=4M status=progress conv=fsync
+sudo partprobe /dev/md1
+
+# grow the partition
+sudo apt install cloud-guest-utils   # install if growpart is missing
+sudo growpart /dev/md1 2
+
+# grow the file system
+sudo e2fsck -f /dev/md1p2
+sudo resize2fs /dev/md1p2
+
+# verify
+lsblk
+sudo mount /dev/md1p2 /mnt/
+df -h
+
+# make the SATA root  mount the SD boot partition at /boot/firmware
+blkid | grep "mmcblk0p1"    # make a note of the PARTUUID
+sudo nano /mnt/etc/fstab
+# identify the "/boot/firmware" partition and replace the PARTUUID with the one you noted before
+# save and exit using ^S and ^X
+
+
+
+
+## manually enter raid 1 system from sd card system (for debugging - reboot system after this)
+# sudo mount /dev/md1p2 /mnt/sys
+# sudo mount --bind /dev /mnt/sys/dev
+# sudo mount --bind /dev/pts /mnt/sys/dev/pts
+# sudo mount --bind /proc /mnt/sys/proc
+# sudo mount --bind /sys /mnt/sys/sys
+# sudo mount --bind /run /mnt/sys/run
+# sudo chroot /mnt/sys /bin/bash
+## end of debugging thread - reboot system after this
+
+
+###### create script root-switch.sh:
+sudo nano /usr/local/sbin/root-switch.sh
+#!/bin/sh
+# root-switch.sh — production-ready root switch for Pi 5 with SD boot + SATA root
+# Author: ChatGPT
+# Date: 2026-01-04
+
+set -e
+
+### CONFIGURATION ###
+PARTUUID="9e020a5c-02"   # <-- replace with your SATA root PARTUUID
+TIMEOUT=15               # seconds to wait for PCIe SATA
+LOGFILE="/var/log/root-switch.log"
+NEWROOT="/newroot"
+
+### LOGGING FUNCTION ###
+log() {
+    msg="$(printf '%s [root-switch] %s\n' "$(date '+%Y-%m-%d %H:%M:%S')" "$*")"
+    printf '%s\n' "$msg" > /dev/serial0
+    printf '%s\n' "$msg" > /dev/console
+}
+
+log "Starting root-switch"
+
+ROOTDEV=""
+
+### WAIT FOR SATA ROOT ###
+for i in $(seq 1 $TIMEOUT); do
+    ROOTDEV=$(blkid -t PARTUUID="$PARTUUID" -o device 2>/dev/null || true)
+    if [ -n "$ROOTDEV" ]; then
+        # print a newline so the next message starts on a fresh line
+        printf '\n' > /dev/serial0
+        printf '\n' > /dev/console
+        log "Found SATA root: $ROOTDEV"
+        break
+    fi
+#    log "Waiting for SATA root ($i/$TIMEOUT)..."
+
+    # Overwrite the current line with the new countdown
+    printf '\r%s [root-switch] Waiting for SATA root (%2d/%d)...' \
+           "$(date '+%Y-%m-%d %H:%M:%S')" "$i" "$TIMEOUT" \
+           > /dev/serial0
+
+    # Optional: also send to /dev/console in case it's different
+    printf '\r%s [root-switch] Waiting for SATA root (%2d/%d)...' \
+           "$(date '+%Y-%m-%d %H:%M:%S')" "$i" "$TIMEOUT" \
+           > /dev/console
+
+    sleep 1
+done
+
+if [ -z "$ROOTDEV" ]; then
+    log "SATA root not found, staying on SD root"
+    exit 0
+fi
+
+### MOUNT AND SWITCH ROOT ###
+log "Mounting SATA root at $NEWROOT"
+mkdir -p "$NEWROOT"
+mount "$ROOTDEV" "$NEWROOT"
+
+log "Switching root to $ROOTDEV"
+exec systemctl switch-root "$NEWROOT" /sbin/init
+
+######End Of File###^Z
+
+# make script executable
+sudo chmod +x /usr/local/sbin/root-switch.sh
+
+sudo nano /etc/systemd/system/root-switch.service
+[Unit]
+DefaultDependencies=no
+After=local-fs.target
+Before=sysinit.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/root-switch.sh
+
+[Install]
+WantedBy=sysinit.target
+###End Of File###^Z
+
+
+# enable root-switch at bootup
+# after this point you will need to unplug both md1 disks if you intend to boot to SD-card
+sudo systemctl enable root-switch.service
+systemctl list-unit-files | grep root-switch  # Should show "enabled"
+
+
+# reboot into /dev/md1p2
+sudo reboot
+
+# also install mdadm raid driver/tools onto md1 root system
+sudo apt install mdadm -y
+
+
+# backup sdcard onto raid 1 system
+sudo dd if=/dev/mmcblk0 bs=4M conv=noerror,sync status=progress | gzip -c > sd-backup.gz
+sync
+
+## if you ever need to restore it
+#gunzip -c sd-backup.gz | sudo dd of=/dev/mmcblk0 bs=4M status=progress
+#sync
+
+
+
+
+#check disks for bad SMART status
+for d in /dev/sd?; do s=$(sudo smartctl -i "$d" | awk -F: '/Serial Number/ {gsub(/^[ \t]+/,"",$2); print $2}'); sudo smartctl -A "$d" | grep -Ei 'Retired|Reallocated|Pending|Uncorrectable|CRC' | awk '$NF != 0' | grep -q . && { echo "::: $d ($s) :::"; sudo smartctl -A "$d" | grep -Ei 'Retired|Reallocated|Pending|Uncorrectable|CRC' | awk '$NF != 0'; }; done
+
+
+# create a raid 6 array of many disks for bulk data storage 
+# view disks
+lsblk -o NAME,SERIAL
+
+
+
+# create script to list slot,device,serial of md1
+nano ./lsmdblk
+#!/bin/bash
+
+# Check if exactly one argument is provided
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <md-device>"
+    echo "Example:"
+    echo "  $0 /dev/md0"
+    echo "  $0 /dev/md127"
+    exit 1
+fi
+
+MD_DEVICE="$1"
+
+# Basic validation: should look like /dev/md followed by number
+if [[ ! "$MD_DEVICE" =~ ^/dev/md[0-9]+$ ]]; then
+    echo "Error: Argument must be a valid md device (e.g. /dev/md0, /dev/md127)"
+    exit 1
+fi
+
+# Check if the device actually exists
+if [ ! -e "$MD_DEVICE" ]; then
+    echo "Error: Device $MD_DEVICE does not exist."
+    exit 1
+fi
+
+# ANSI color codes
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+CYAN='\033[0;36m'
+RED='\033[0;31m'
+GRAY='\033[0;90m'
+NC='\033[0m'
+
+printf "Slot  Device     Serial             State\n"
+printf -- "----  ---------  -----------------  --------------------------------\n"
+
+sudo mdadm --detail "$MD_DEVICE" | \
+grep -E '^ *[0-9]+[[:space:]]+[0-9]+[[:space:]]+[0-9]+[[:space:]]+.* /dev/sd' | \
+awk '
+  {
+    slot = $4;
+    dev  = $NF;
+    # State starts from field 5 to (NF-1)
+    state = "";
+    for (i=5; i<NF; i++) {
+      state = state $i " ";
+    }
+    state = gensub(/[[:space:]]+$/, "", "g", state);  # trim trailing space
+    printf "%s|%s|%s\n", slot, dev, state;
+  }' | \
+sort -t'|' -k1 -n | \
+while IFS='|' read -r slot dev full_state; do
+    serial=$(sudo smartctl -i "$dev" 2>/dev/null | awk '/^Serial Number:/ {print $3}' || echo "-")
+
+    # Color logic
+    color="$GRAY"
+    if [[ "$full_state" == *"active sync"* ]]; then
+        color="$GREEN"
+    elif [[ "$full_state" == *"rebuilding"* || "$full_state" == *"resync"* || "$full_state" == *"recovery"* ]]; then
+        color="$YELLOW"
+    elif [[ "$full_state" == *"spare"* ]]; then
+        color="$CYAN"
+    elif [[ "$full_state" == *"faulty"* || "$full_state" == *"failed"* || "$full_state" == *"removed"* ]]; then
+        color="$RED"
+    fi
+
+    printf "%4s  %-9s  %-17s  ${color}%s${NC}\n" \
+        "$slot" "$dev" "${serial:--}" "$full_state"
+done
+^S^X
+
+# make executable
+sudo chmod +x ./lsmdblk
+
+# list md devices
+sudo ./lsmdblk
+Slot  Device     Serial             State
+----  ---------  -----------------  --------------------------------
+   -  /dev/sdi   50026B77530B7546   spare
+   -  /dev/sdk   50026B775206F015   spare
+   0  /dev/sdl   50026B72610B78A0   active sync
+   1  /dev/sdm   50026B724601B890   active sync
+   2  /dev/sdj   50026B724601B267   active sync
+   3  /dev/sda   50026B724601B79D   active sync
+   4  /dev/sdo   50026B724601B0AF   active sync
+   5  /dev/sdg   50026B724408D715   active sync
+   6  /dev/sdb   50026B774B0C47C7   active sync
+   7  /dev/sdc   50026B724601B586   active sync
+   8  /dev/sdd   50026B77530B6F60   active sync
+   9  /dev/sdf   50026B7752003FD3   active sync
+
+
+# create nas mount point
+mkdir /mnt/nas
+
+# Bind mount the raid6 onto /mnt/nas for use with nextcloud, add this line to /etc/fstab:
+/srv/dev-disk-by-uuid-30ad3848-b71e-4cbf-945e-b681eb8e8db2  /mnt/nas  none  bind,nofail  0 0
+
+
+# install OpenMediaVault (based on this guide: https://pimylifeup.com/raspberry-pi-openmediavault/ )
+sudo apt update
+sudo apt upgrade
+wget -O - https://raw.githubusercontent.com/OpenMediaVault-Plugin-Developers/installScript/master/preinstall | sudo bash
+sudo reboot
+wget -O - https://raw.githubusercontent.com/OpenMediaVault-Plugin-Developers/installScript/master/install | sudo bash
+# upon installation finish system will restart after 60 seconds
+
+sudo omv-firstaid
+# then select 3 Configure Workbench - set to 8080
+
+# if you need to reenable wifi, run sudo omv-firstaid again, then select 1 Configure network interface
+
+sudo reboot
+# wait for the network interface to come up, this can take up to 3 minutes on a RPi5
+# Browse to http://192.168.1.191:8080
+# login, set up new password
+# click to menu/Workbench/Port - change to 8888
+# Browse to http://192.168.1.191:8888 and login again
+# click to menu/System/omv-extras - click to enable Docker repo
+# click to menu/System/Plugins/openmediavault-compose - install it
+# click to menu/Services/Compose/Files/Create  (https://forum.openmediavault.org/index.php?thread/49357-omv-quick-configuration-guide/&postID=363921#post363921)
+# Name = nextcloud
+# File => paste this, then press Save:
+services:
+  nextcloud-aio-mastercontainer:
+    image: nextcloud/all-in-one:latest
+    restart: always
+    container_name: nextcloud-aio-mastercontainer
+    volumes:
+      - nextcloud_aio_mastercontainer:/mnt/docker-aio-config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - 80:80
+      - 8080:8080
+      - 8443:8443
+    environment:
+      - NEXTCLOUD_DATADIR=/mnt/nas/nextcloud_data
+volumes:
+  nextcloud_aio_mastercontainer:
+    name: nextcloud_aio_mastercontainer
+
+# click save and mark nextcloud yellow then click arrow-up
+# At this point you will need a domain pointing to your server and opening ports 80 and 443 on your router.
+# Access Nextcloud AIO at https://192.168.1.191:8080
+# Accept the certificate to access, copy the password and follow the instructions to configure Nextcloud AIO at: https://nextcloud.com/blog/how-to-install-the-nextcloud-all-in-one-on-linux/ Start from the first screenshot of Nextcloud AIO setup.
+
+
+# Create a Gmail account, add 2-factor authentification and then create an App-Password for email logs, notifications etc.

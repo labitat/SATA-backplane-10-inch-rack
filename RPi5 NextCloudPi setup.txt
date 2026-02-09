@@ -1,0 +1,288 @@
+Materials:
+- Raspberry Pi 5
+- 64GB TFcard with Raspberry Pi OS (Legacy 64-bit) Lite
+- Waveshare PCIe to PCIe Board
+- SU-SA3120J PICe to SATA expander
+
+# Activate PCIe gen3:
+sudo apt update
+sudo apt upgrade -y
+sudo rpi-eeprom-update -a
+sudo reboot
+
+sudo nano /boot/firmware/config.txt
+# Add at the bottom:
+[all]
+
+dtparam=pciex1
+dtparam=pciex1_gen=3
+dtoverlay=pciex1-compat-pi5,no-mip
+dtoverlay=disable-bt  # Optional: Frees UART from Bluetooth
+
+dtparam=fan_temp0=55000
+dtparam=fan_temp0_hyst=2500
+dtparam=fan_temp0_speed=100
+^S^X
+
+# Edit the SSH server config
+sudo nano /etc/ssh/sshd_config #set PasswordAuthentication yes
+sudo systemctl restart ssh
+
+
+# show sata devices
+dmesg | grep -i sata
+lsblk
+
+# count sata devices
+dmesg | grep -o 'SATA link up' | wc -l
+
+# Show CPU current temperature
+cat /sys/class/thermal/thermal_zone0/temp
+
+
+curl -sSL https://raw.githubusercontent.com/nextcloud/nextcloudpi/master/install.sh | sudo bash
+
+
+
+
+
+
+
+________________________ OOOLD INFO ________________________
+
+
+
+# enable mdadm
+sudo ln -s /sbin/mdadm /usr/local/bin/mdadm
+sudo mdadm --assemble --scan
+sudo mkdir /mnt/raid
+sudo mount /dev/md/nas /mnt/raid/
+sudo mdadm --detail --scan | sudo tee /etc/mdadm/mdadm.conf
+sudo update-initramfs -u
+sudo blkid /dev/md/nas
+sudo nano /etc/fstab
+
+
+
+
+
+
+
+________________________ OOOOOLD INFO ________________________
+
+
+# install software raid
+$ sudo apt update
+$ sudo apt install mdadm
+$ sudo apt install btrfs-progs gparted -y
+
+# wipe all disks !*!*!*! DANGEROUS !*!*!*!
+$ for d in /dev/sd[a-m]; do     sudo wipefs -a $d; done
+
+# create array
+$ sudo mdadm --create /dev/md0   --level=6 --raid-devices=13   --bitmap=internal   --name=nas   /dev/sd[a-m]
+
+# madm status view (wait for Resync Status to complete)
+$ sudo mdadm --detail /dev/md0
+
+# Format with Btrfs (dup metadata = safer on non-ECC)
+$ sudo mkfs.btrfs -f   -m dup -d single   -O no-holes   /dev/md0
+
+# 3. Mount
+$ sudo mkdir /mnt/nas
+$ sudo mount /dev/md0 /mnt/nas
+
+# Persist the array, part 1 (so it survives reboot) - Save the config
+$ sudo mdadm --examine --scan | sudo tee /etc/mdadm/mdadm.conf
+
+# Persist the array, part 2 - The following 5 lines are all part of one single command
+$ sudo bash -c "cat << EOF >> /etc/mdadm/mdadm.conf
+# Custom NAS array
+ARRAY /dev/md0 metadata=1.2 name=rpi5:nas UUID=\$(mdadm --detail /dev/md0 | grep UUID | awk '{print \$2}') level=6 num-devices=16
+EOF"
+
+# Persist the array, part 3 - Madm status view
+$ sudo mdadm --detail /dev/md0
+
+# Persist the array, part 4 - View config (should return like this: ARRAY /dev/md/nas  metadata=1.2 UUID=xxxxxxxx:xxxxxxxx:xxxxxxxx:xxxxxxxx)
+$ cat /etc/mdadm/mdadm.conf
+
+# Force initramfs to include mdadm + array - The following 11 lines are all part of one single command
+sudo bash -c 'cat << EOF > /etc/initramfs-tools/modules
+# Force mdadm modules
+md_mod
+raid456
+linear
+multipath
+faulty
+raid0
+raid1
+raid10
+EOF'
+
+
+# Update initramfs (critical for boot-time assembly)
+# Enable mdadm in initramfs
+$ sudo sed -i 's/#MDADM=.*/MDADM=yes/' /etc/default/mdadm 2>/dev/null || echo "MDADM=yes" | sudo tee -a /etc/default/mdadm
+
+# Rebuild initramfs
+$ sudo update-initramfs -u -k all
+
+
+# Get Btrfs filesystem UUID
+$ sudo btrfs filesystem show /dev/md0
+
+# Auto-mount at boot: /etc/fstab
+# Backup current fstab
+$ sudo cp /etc/fstab /etc/fstab.bak.$(date +%F)
+
+# Add Btrfs mount entry - The following 5 lines are all part of one single command:
+$ sudo bash -c 'cat << EOF >> /etc/fstab
+
+# RPi5 NAS - RAID6 + Btrfs
+UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  /mnt/nas  btrfs  defaults,noatime,compress=zstd:3,autodefrag  0  0
+EOF'
+
+
+# Set correct timezone
+sudo timedatectl set-timezone Europe/Copenhagen
+
+# Edit config
+sudo nano /etc/mdadm/mdadm.conf
+# Add at the bottom:
+MAILADDR your.email@example.com
+MAILFROM rpi5-nas@files.local
+PROGRAM /usr/share/mdadm/checkarray
+^S^X
+
+
+# Create timer unit
+sudo bash -c 'cat << EOF > /etc/systemd/system/mdadm-check.timer
+[Unit]
+Description=Monthly mdadm array check
+
+[Timer]
+OnCalendar=*-*-01 03:00:00
+Persistent=true
+Unit=mdadm-check.service
+
+[Install]
+WantedBy=timers.target
+EOF'
+
+# Create service
+sudo bash -c 'cat << EOF > /etc/systemd/system/mdadm-check.service
+[Unit]
+Description=mdadm array check
+Requires=mdadm.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/share/mdadm/checkarray --all --quiet
+EOF'
+
+# Enable timer
+sudo systemctl enable mdadm-check.timer
+sudo systemctl start mdadm-check.timer
+
+# Check status:
+systemctl list-timers | grep mdadm
+
+# Create boot delay script - The following 12 lines are all part of one single command:
+sudo bash -c 'cat << "EOF" > /etc/initramfs-tools/scripts/init-premount/99-wait-for-sata
+#!/bin/sh
+PREREQ=""
+prereqs() { echo "$PREREQ"; }
+case $1 in prereqs) prereqs; exit 0;; esac
+
+. /scripts/functions
+
+log_begin_msg "Waiting for SATA drives..."
+sleep 5
+log_end_msg
+EOF'
+
+# Make it executable
+sudo chmod +x /etc/initramfs-tools/scripts/init-premount/99-wait-for-sata
+
+# Rebuild initramfs again
+sudo update-initramfs -u -k all
+
+# Update /etc/mdadm/mdadm.conf with homehost
+sudo nano /etc/mdadm/mdadm.conf # add this to the top iif missing (above the ARRAY ...)
+HOMEHOST rpi5
+
+# Verify /boot/cmdline.txt has rootdelay
+sudo nano /boot/firmware/cmdline.txt  # Add at the end:
+rootdelay=15
+
+# Verify boot assembly works
+# 1. Reboot
+sudo reboot
+
+# 2. After reboot, check:
+# 2-1. Array up?
+cat /proc/mdstat | grep md0
+# 2-2. Device exists?
+ls /dev/md0
+# 2-3. Mounted?
+df -h /mnt/nas
+mount | grep /mnt/nas
+# 2-4. Btrfs healthy?
+sudo btrfs scrub status /mnt/nas
+# 2-5. madm healthy?
+sudo mdadm --detail /dev/md0
+# 2-6. Is it read-write?
+sudo touch /mnt/nas/.test && sudo rm /mnt/nas/.test && echo "Read-write OK"
+# 2-7. Btrfs health
+sudo btrfs filesystem show /mnt/nas
+sudo btrfs scrub status /mnt/nas
+
+
+# Enable Samba (SMB) Share
+sudo apt install samba
+sudo bash -c 'cat << EOF > /etc/samba/smb.conf
+[global]
+workgroup = HOME
+server string = RPi5 NAS
+security = user
+
+[nas]
+path = /mnt/nas
+valid users = youruser      # ← CHANGE THIS TO YOUR ACTUAL LINUX USER NAME ($ whoami)
+read only = no
+browsable = yes
+EOF'
+
+sudo smbpasswd -a youruser      # ← CHANGE THIS TO YOUR ACTUAL LINUX USER NAME ($ whoami)
+sudo systemctl restart smbd
+
+
+# Monthly Scrub (Auto-Repair)
+bashsudo bash -c 'cat << "EOF" > /etc/cron.monthly/btrfs-scrub
+#!/bin/sh
+btrfs scrub start -B /mnt/nas
+EOF'
+sudo chmod +x /etc/cron.monthly/btrfs-scrub
+
+
+
+# Email alerts (install postfix if you want mail)
+$ sudo nano /etc/mdadm/mdadm.conf  # FILE SHOULD LOOK LIKE BELOW
+ARRAY /dev/md0 metadata=1.2 name=rpi5:nas UUID=12345678:abcd1234:...
+
+# === USER SETTINGS BELOW ===
+HOMEHOST rpi5
+
+# Email alerts
+MAILADDR you@gmail.com
+MAILFROM rpi5-nas@home.local
+PROGRAM /usr/share/mdadm/checkarray
+^S^X
+
+
+************* Untested below ********************
+
+
+# Weekly scrub (add to root crontab)
+0 3 * * 0  echo check > /sys/block/md0/md/sync_action
