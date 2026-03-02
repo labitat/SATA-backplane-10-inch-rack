@@ -343,8 +343,11 @@ volumes:
 
 # click save and mark nextcloud yellow then click arrow-up
 # At this point you will need a domain pointing to your server and opening ports 80 and 443 on your router.
-# Access Nextcloud AIO at https://192.168.1.191:8080
-# Accept the certificate to access, copy the password and follow the instructions to configure Nextcloud AIO at: https://nextcloud.com/blog/how-to-install-the-nextcloud-all-in-one-on-linux/ Start from the first screenshot of Nextcloud AIO setup.
+# Access Nextcloud AIO Login at https://192.168.1.191:8080 , accept the certificate to access and copy the password
+# At the AIO Interface, scroll to the bottom and add the Community Container: NPMPlus
+# Follow the instructions to configure Nextcloud AIO at: https://nextcloud.com/blog/how-to-install-the-nextcloud-all-in-one-on-linux/ Start from the first screenshot of Nextcloud AIO setup.
+
+# Create a Gmail account, add 2-factor authentification and then create an App-Password for email logs, notifications etc. https://myaccount.google.com/apppasswords strip the generated passwords from spaces
 
 
-# Create a Gmail account, add 2-factor authentification and then create an App-Password for email logs, notifications etc.
+
