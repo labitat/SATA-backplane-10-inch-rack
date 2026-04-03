@@ -275,7 +275,7 @@ done
 sudo chmod +x ./lsmdblk
 
 # list md devices
-sudo ./lsmdblk
+sudo ./lsmdblk /dev/md0
 Slot  Device     Serial             State
 ----  ---------  -----------------  --------------------------------
    -  /dev/sdi   50026B77530B7546   spare
