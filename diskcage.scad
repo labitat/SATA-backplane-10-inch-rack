@@ -133,8 +133,13 @@ module side(){
 // https://docs.rs-online.com/f3fc/0900766b814e41f9.pdf
 translate([0, 25, -5])
 rotate([0, -90, -90])
-union(){
+difference(){
 	cube([99, 97, 30]);
+  // Wiring
+	for(y=[40:9.5:80])
+	translate([0, y, 20])
+		rotate([0, 90, 0])
+			cylinder(d=8, h=50, center=true);
 	// Bottom mounts
 	*union(){
 		translate([4.5, 85, 0])
@@ -161,10 +166,6 @@ union(){
 		rotate([90, 0, 0])
 			cylinder(h=30, d=3, center=true);
 	}
-	for(y=[40:9.5:80])
-	translate([0, y, 20])
-		rotate([0, 90, 0])
-			cylinder(d=8, h=50, center=true);
 }
 
 // VESA-100 mounting plane
@@ -172,20 +173,22 @@ translate([0, -35, 60])
 rotate([0, -90, 0]){
 	difference(){
 		// mounting backplane
-		translate([-115, -166, 1])
-			#cube([220, 270, 6]);
+    color("brown")
+		translate([-115, -166, 0])
+			#cube([220, 270, 14]);
 		
 		// mounting holes
 		for(x=[-50, 50], y=[-50, 50])
-			translate([x, y, 0])
-				cylinder(d=4, h=10);
+			translate([x, y, -1])
+				cylinder(d=4, h=16);
 	}
 	// HP t740 unit
-	translate([0, 0, 35])
+	translate([0, 0, 39])
 		cube([209, 209, 50], center=true);
 }
 
 // Bottom stand
-#translate([-60, -201, -61])
-	cube([160,270,6]);
+#color("brown")
+translate([-60, -201, -69])
+	cube([160,270,14]);
 cage();
