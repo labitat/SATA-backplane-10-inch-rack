@@ -33,7 +33,7 @@ echo(XYZ=[disks*x_interval+wall, 2*flange+diskwidth, height]);
 
 module cage(){
 for(n=[0, 1])
-	translate([0, -diskwidth/2+(-fan[0]-1)*n, 0])
+	translate([0, -diskwidth/2-100*n, 0])
 		for(y=[0, 1])
 			mirror([0, y, 0])
 				translate([0, diskwidth/2, 0])
@@ -131,7 +131,7 @@ module side(){
 
 // LRS-75 mount
 // https://docs.rs-online.com/f3fc/0900766b814e41f9.pdf
-translate([0, flange+1, 10])
+translate([0, 25, -5])
 rotate([0, -90, -90])
 union(){
 	cube([99, 97, 30]);
@@ -164,22 +164,28 @@ union(){
 	for(y=[40:9.5:80])
 	translate([0, y, 20])
 		rotate([0, 90, 0])
-			cylinder(d=8, h=30, center=true);
+			cylinder(d=8, h=50, center=true);
 }
 
-// HP t740 mount (VESA100)
-%translate([0, -60, 70])
+// VESA-100 mounting plane
+translate([0, -35, 60])
 rotate([0, -90, 0]){
 	difference(){
-		// mounting plate
-		translate([-209/2, -116, 1])
-			cube([0*209+250, 220, 6]);
+		// mounting backplane
+		translate([-115, -166, 1])
+			#cube([220, 270, 6]);
+		
+		// mounting holes
 		for(x=[-50, 50], y=[-50, 50])
 			translate([x, y, 0])
 				cylinder(d=4, h=10);
 	}
-*	// t740 unit
+	// HP t740 unit
 	translate([0, 0, 35])
 		cube([209, 209, 50], center=true);
 }
+
+// Bottom stand
+#translate([-60, -201, -61])
+	cube([160,270,6]);
 cage();
